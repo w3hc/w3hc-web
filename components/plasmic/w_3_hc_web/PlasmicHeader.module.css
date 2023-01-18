@@ -99,10 +99,25 @@
   max-width: 800px;
   color: var(--token-u_cGwS23As82q0);
 }
+.freeBox___0DSAs {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+.link__a3Xse {
+  height: auto;
+  max-width: 800px;
+  color: var(--token-u_cGwS23As82q0);
+}
 .login:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  height: 16px;
+  height: 26px;
   width: 56px;
   flex-shrink: 0;
 }

@@ -1,25 +1,42 @@
-This is a Next.js project bootstrapped with [`create-plasmic-app`](https://www.npmjs.com/package/create-plasmic-app).
+# W3HC Website
 
-## Getting Started
+This website is built with: 
 
-First, run the development server:
+- [Plasmic]((https://www.plasmic.app/))
+- [Next.js](https://nextjs.org/)
+- [Web3Auth](https://web3auth.io/)
 
-```bash
+## Install
+
+```sh
+npm i
+```
+
+## Run
+
+```sh
 npm run dev
 ```
 
-Open your browser to see the result.
+## Update
 
-You can start editing your project in Plasmic Studio. The page auto-updates as you edit the project.
+To update the content or design, you can [use Plasmic](https://studio.plasmic.app/projects/rURT7PSYpAQNuaCGHJDPZg). To modify the code, you can make a pull request.
 
-## Learn More
+## Links
 
-With Plasmic, you can enable non-developers on your team to publish pages and content into your website or app.
+- [https://w3hc.org](https://w3hc.org)
+- [IPFS](https://bafybeiehvnb2wivibvfzlgfvcpuutrj5yz2cp4nhjsaokcpneytrcmfkom.ipfs.w3s.link/)
 
-To learn more about Plasmic, take a look at the following resources:
+## Resources
 
-- [Plasmic Website](https://www.plasmic.app/)
-- [Plasmic Documentation](https://docs.plasmic.app/learn/)
-- [Plasmic Slack Community](https://www.plasmic.app/slack)
+- [W3HC website on Plasmic](https://studio.plasmic.app/projects/rURT7PSYpAQNuaCGHJDPZg)
+- [Web3Auth integration builder](https://web3auth.io/docs/integration-builder?lang=NEXT&chain=ETH&evmFramework=ETHERS&customAuth=NONE&mfa=NONE&whitelabel=NO&useModal=YES&web3AuthNetwork=TESTNET&rnMode=EXPO&stepIndex=0)
+- [Plasmic docs](https://docs.plasmic.app/learn/)
 
-You can check out [the Plasmic GitHub repository](https://github.com/plasmicapp/plasmic) - your feedback and contributions are welcome!
+## Support
+
+You can contact me via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discord.gg/bHKJV3NWUQ), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
+
+## License
+
+[GPL-3.0](https://github.com/w3hc/w3hc-web/blob/main/LICENSE)

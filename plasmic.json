@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -38,7 +38,8 @@
           "name": "Reveal",
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "rURT7PSYpAQNuaCGHJDPZg",
@@ -102,14 +103,40 @@
         },
         {
           "id": "5zjokN2A33jNz",
-          "name": "Play",
+          "name": "Projects",
           "type": "managed",
           "projectId": "rURT7PSYpAQNuaCGHJDPZg",
-          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicPlay.tsx",
+          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicProjects.tsx",
           "importSpec": {
-            "modulePath": "../pages/play.tsx"
+            "modulePath": "../pages/projects.tsx"
           },
-          "cssFilePath": "plasmic/w_3_hc_web/PlasmicPlay.module.css",
+          "cssFilePath": "plasmic/w_3_hc_web/PlasmicProjects.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "JRM9PBGrBO",
+          "name": "About",
+          "type": "managed",
+          "projectId": "rURT7PSYpAQNuaCGHJDPZg",
+          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicAbout.tsx",
+          "importSpec": {
+            "modulePath": "../pages/about.tsx"
+          },
+          "cssFilePath": "plasmic/w_3_hc_web/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "UqAN3orjkq",
+          "name": "Gov",
+          "type": "managed",
+          "projectId": "rURT7PSYpAQNuaCGHJDPZg",
+          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicGov.tsx",
+          "importSpec": {
+            "modulePath": "../pages/gov.tsx"
+          },
+          "cssFilePath": "plasmic/w_3_hc_web/PlasmicGov.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }
@@ -128,24 +155,14 @@
       ],
       "images": [
         {
-          "id": "yo45ztHxInR1hW",
-          "name": "strat-logo-white.png",
-          "filePath": "../public/plasmic/w_3_hc_web/images/stratLogoWhitepng.png"
-        },
-        {
-          "id": "xR4s5r1Klo893_",
-          "name": "favicon.png",
-          "filePath": "../public/plasmic/w_3_hc_web/images/faviconpng.png"
-        },
-        {
-          "id": "UmTFOVRa2baIcl",
-          "name": "Capture d’écran 2022-12-22 à 10.59.03.png",
-          "filePath": "../public/plasmic/w_3_hc_web/images/captureDecran20221222A105903Png.png"
-        },
-        {
           "id": "gPeMkiHeBoJ94d",
           "name": "aztec.png",
           "filePath": "../public/plasmic/w_3_hc_web/images/aztecpng.png"
+        },
+        {
+          "id": "Mi5b2Up-h",
+          "name": "contracts-explained.png",
+          "filePath": "../public/plasmic/w_3_hc_web/images/contractsExplainedpng.png"
         }
       ],
       "indirect": false,

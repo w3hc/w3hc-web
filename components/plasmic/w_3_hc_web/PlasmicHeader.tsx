@@ -125,7 +125,7 @@ function PlasmicHeader__RenderFunc(props: {
               href={`/`}
               platform={"nextjs"}
             >
-              {"PWN"}
+              {"W3HC"}
             </p.PlasmicLink>
           </div>
         ) : null}
@@ -146,10 +146,27 @@ function PlasmicHeader__RenderFunc(props: {
                 sty.link__eytR4
               )}
               component={Link}
-              href={`/play`}
+              href={`/projects`}
               platform={"nextjs"}
             >
-              {"Play"}
+              {"Projects"}
+            </p.PlasmicLink>
+          </div>
+        ) : null}
+        {true ? (
+          <div className={classNames(projectcss.all, sty.freeBox___0DSAs)}>
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__a3Xse
+              )}
+              component={Link}
+              href={`/about`}
+              platform={"nextjs"}
+            >
+              {"About"}
             </p.PlasmicLink>
           </div>
         ) : null}

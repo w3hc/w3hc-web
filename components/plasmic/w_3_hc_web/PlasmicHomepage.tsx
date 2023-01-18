@@ -181,6 +181,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.section)}
               >
                 <Reveal
+                  big={true}
                   className={classNames("__wab_instance", sty.reveal__lnjAt)}
                   direction={"down" as const}
                   duration={5000 as const}
@@ -195,7 +196,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? "Web3 Hackers Collective"
+                      ? "Web3 \nHackers \nCollective"
                       : "Web3 Hackers Collective"}
                   </div>
                 </Reveal>
@@ -216,7 +217,129 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__aBgRi
                     )}
                   >
-                    {"Integrations | Mentoring | Education"}
+                    {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <p.PlasmicLink
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link__pnhEe
+                            )}
+                            component={Link}
+                            href={`/`}
+                            platform={"nextjs"}
+                          >
+                            {hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? "Integrations"
+                              : "Integrations"}
+                          </p.PlasmicLink>
+                        }
+                        <React.Fragment>{"\n"}</React.Fragment>
+                        {
+                          <p.PlasmicLink
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link__sIxqc
+                            )}
+                            component={Link}
+                            href={`/`}
+                            platform={"nextjs"}
+                          >
+                            {hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? "Mentoring"
+                              : "Mentoring"}
+                          </p.PlasmicLink>
+                        }
+                        <React.Fragment>{"\n"}</React.Fragment>
+                        {
+                          <p.PlasmicLink
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link___3BnPg
+                            )}
+                            component={Link}
+                            href={`/`}
+                            platform={"nextjs"}
+                          >
+                            {hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? "Education"
+                              : "Education"}
+                          </p.PlasmicLink>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    ) : (
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <p.PlasmicLink
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link__pnhEe
+                            )}
+                            component={Link}
+                            href={`/`}
+                            platform={"nextjs"}
+                          >
+                            {hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? "Integrations"
+                              : "Integrations"}
+                          </p.PlasmicLink>
+                        }
+                        <React.Fragment> </React.Fragment>
+                        {
+                          <p.PlasmicLink
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link__sIxqc
+                            )}
+                            component={Link}
+                            href={`/`}
+                            platform={"nextjs"}
+                          >
+                            {hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? "Mentoring"
+                              : "Mentoring"}
+                          </p.PlasmicLink>
+                        }
+                        <React.Fragment> </React.Fragment>
+                        {
+                          <p.PlasmicLink
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link___3BnPg
+                            )}
+                            component={Link}
+                            href={`/`}
+                            platform={"nextjs"}
+                          >
+                            {hasVariant(globalVariants, "screen", "mobileOnly")
+                              ? "Education"
+                              : "Education"}
+                          </p.PlasmicLink>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
+                      </React.Fragment>
+                    )}
                   </div>
                 </Reveal>
               </p.Stack>
