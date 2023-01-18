@@ -1,0 +1,123 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: auto;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  width: 100%;
+  background: var(--token-_efKsYmq0_KOgM);
+  min-width: 0;
+  padding: 8px 8px 60px;
+}
+.freeBox___2HSqo {
+  flex-direction: row;
+  display: flex;
+  position: relative;
+  height: auto;
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.freeBox___2HSqo > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 0px);
+  width: calc(100% + 0px);
+}
+.freeBox___2HSqo > :global(.__wab_flex-container) > *,
+.freeBox___2HSqo > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox___2HSqo > :global(.__wab_flex-container) > picture > img,
+.freeBox___2HSqo
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 0px;
+}
+.freeBox__kwM78 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.link__kLvX {
+  height: auto;
+  max-width: 800px;
+  color: var(--token-u_cGwS23As82q0);
+  font-weight: 700;
+}
+.freeBox__r6Hua {
+  flex-direction: row;
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-self: auto;
+  min-width: 0;
+  padding: 8px;
+}
+.freeBox__r6Hua > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 15px);
+  width: calc(100% + 15px);
+}
+.freeBox__r6Hua > :global(.__wab_flex-container) > *,
+.freeBox__r6Hua > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__r6Hua > :global(.__wab_flex-container) > picture > img,
+.freeBox__r6Hua
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 15px;
+}
+.freeBox___2QG8N {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+.link__eytR4 {
+  height: auto;
+  max-width: 800px;
+  color: var(--token-u_cGwS23As82q0);
+}
+.login:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  height: 16px;
+  width: 56px;
+  flex-shrink: 0;
+}
+.svg__uHdT {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.text {
+  font-size: 12px;
+}
+.svg__t8AV {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
