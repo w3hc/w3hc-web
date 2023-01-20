@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  min-width: 0;
+  padding: 8px;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 12px;
+  border: 4px solid var(--token-7DbeV7g-nRWUR3);
+}
+.root:hover .freeBox {
+  border-color: var(--token-zqwdlV4ZdEYm_k);
+}
+.no {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+}
+.slotTargetChildren {
+  color: var(--token-u_cGwS23As82q0);
+}

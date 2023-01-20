@@ -184,7 +184,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   big={true}
                   className={classNames("__wab_instance", sty.reveal__lnjAt)}
                   direction={"down" as const}
-                  duration={5000 as const}
+                  duration={3000 as const}
                   effect={"fade" as const}
                   triggerOnce={true}
                 >
@@ -205,8 +205,8 @@ function PlasmicHomepage__RenderFunc(props: {
                   big={true}
                   cascade={false}
                   className={classNames("__wab_instance", sty.reveal___8Hfe2)}
-                  delay={4000 as const}
-                  duration={2000 as const}
+                  delay={3000 as const}
+                  duration={3000 as const}
                   effect={"fade" as const}
                   triggerOnce={true}
                 >
