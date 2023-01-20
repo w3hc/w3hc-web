@@ -205,8 +205,8 @@ function PlasmicHomepage__RenderFunc(props: {
                   big={true}
                   cascade={false}
                   className={classNames("__wab_instance", sty.reveal___8Hfe2)}
-                  delay={2000 as const}
-                  duration={1000 as const}
+                  delay={3000 as const}
+                  duration={3000 as const}
                   effect={"fade" as const}
                   triggerOnce={true}
                 >

@@ -55,6 +55,7 @@
   max-width: 800px;
   color: var(--token-u_cGwS23As82q0);
   font-weight: 700;
+  font-size: 20px;
 }
 .freeBox__r6Hua {
   flex-direction: row;
@@ -98,6 +99,7 @@
   height: auto;
   max-width: 800px;
   color: var(--token-u_cGwS23As82q0);
+  font-size: 20px;
 }
 .freeBox___0DSAs {
   display: flex;
@@ -113,12 +115,13 @@
   height: auto;
   max-width: 800px;
   color: var(--token-u_cGwS23As82q0);
+  font-size: 20px;
 }
 .login:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
-  height: 26px;
-  width: 56px;
+  height: 34px;
+  width: 71px;
   flex-shrink: 0;
 }
 .svg__uHdT {
@@ -128,7 +131,7 @@
   height: 1em;
 }
 .text {
-  font-size: 12px;
+  font-size: 18px;
 }
 .svg__t8AV {
   position: relative;

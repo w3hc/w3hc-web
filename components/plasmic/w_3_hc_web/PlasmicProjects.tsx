@@ -274,7 +274,7 @@ function PlasmicProjects__RenderFunc(props: {
                   sty.text__gDdS
                 )}
               >
-                {"Members' projects"}
+                {"In house projects"}
               </div>
 
               <div

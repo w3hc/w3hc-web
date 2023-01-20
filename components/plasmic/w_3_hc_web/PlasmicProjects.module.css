@@ -52,10 +52,10 @@
   width: 100%;
   height: auto;
   color: var(--token-u_cGwS23As82q0);
-  padding-bottom: 20px;
   text-align: center;
   font-size: 60px;
   min-width: 0;
+  padding: 0px 0px 30px;
 }
 .block4 {
   display: flex;
@@ -129,10 +129,10 @@
   width: 100%;
   height: auto;
   color: var(--token-u_cGwS23As82q0);
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   text-align: center;
   font-size: 60px;
-  padding-top: 54px;
+  padding-top: 60px;
   min-width: 0;
 }
 .block {
