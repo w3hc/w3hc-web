@@ -170,32 +170,36 @@ function PlasmicButton__RenderFunc(props: {
       {
         path: "showStartIcon",
         type: "private",
-        initFunc: ($props, $state, $ctx) => $props.showStartIcon
+        initFunc: true
+          ? ($props, $state, $ctx) => $props.showStartIcon
+          : undefined
       },
       {
         path: "showEndIcon",
         type: "private",
-        initFunc: ($props, $state, $ctx) => $props.showEndIcon
+        initFunc: true
+          ? ($props, $state, $ctx) => $props.showEndIcon
+          : undefined
       },
       {
         path: "isDisabled",
         type: "private",
-        initFunc: ($props, $state, $ctx) => $props.isDisabled
+        initFunc: true ? ($props, $state, $ctx) => $props.isDisabled : undefined
       },
       {
         path: "shape",
         type: "private",
-        initFunc: ($props, $state, $ctx) => $props.shape
+        initFunc: true ? ($props, $state, $ctx) => $props.shape : undefined
       },
       {
         path: "size",
         type: "private",
-        initFunc: ($props, $state, $ctx) => $props.size
+        initFunc: true ? ($props, $state, $ctx) => $props.size : undefined
       },
       {
         path: "color",
         type: "private",
-        initFunc: ($props, $state, $ctx) => $props.color
+        initFunc: true ? ($props, $state, $ctx) => $props.color : undefined
       }
     ],
     [$props, $ctx]

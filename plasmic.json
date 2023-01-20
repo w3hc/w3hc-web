@@ -139,6 +139,19 @@
           "cssFilePath": "plasmic/w_3_hc_web/PlasmicGov.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "jyATwjnQCA",
+          "name": "Project",
+          "type": "managed",
+          "projectId": "rURT7PSYpAQNuaCGHJDPZg",
+          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicProject.tsx",
+          "importSpec": {
+            "modulePath": "Project.tsx"
+          },
+          "cssFilePath": "plasmic/w_3_hc_web/PlasmicProject.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
