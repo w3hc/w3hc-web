@@ -54,7 +54,6 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -154,9 +153,35 @@ function PlasmicAbout__RenderFunc(props: {
                   sty.text__hZmx1
                 )}
               >
-                {
-                  "The Web3 Hackers Collective is a DAO created on January 2023."
-                }
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "The Web3 Hackers Collective is a DAO that's about to launch. We'll use "
+                    }
+                  </React.Fragment>
+                  {
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__ey2G2
+                      )}
+                      component={Link}
+                      href={"https://github.com/w3hc/gov" as const}
+                      platform={"nextjs"}
+                      target={"_blank" as const}
+                    >
+                      {"Gov"}
+                    </p.PlasmicLink>
+                  }
+                  <React.Fragment>
+                    {
+                      " which is an implementation of Open Zeppelin's Governor contract in combination with NFTs. "
+                    }
+                  </React.Fragment>
+                </React.Fragment>
               </div>
 
               <div
@@ -166,7 +191,46 @@ function PlasmicAbout__RenderFunc(props: {
                   sty.text__f0Iea
                 )}
               >
-                {"Its objective is to [TBD]"}
+                <React.Fragment>
+                  <React.Fragment>
+                    {
+                      "We are currently in the process of deciding our own mission statement. We already know we want to work on many different software "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"integrations"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      " identified as relevant. These can be opportunities to put productive "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"mentoring"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      " sessions in place. Mutual aid matters to us. Also, we'll do our best to improve "
+                    }
+                  </React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"education"}
+                  </span>
+                  <React.Fragment>
+                    {
+                      " on what's at stake with the Web3 movement. A lot of everyday people still don't seem to understand it."
+                    }
+                  </React.Fragment>
+                </React.Fragment>
               </div>
 
               <div
@@ -180,21 +244,79 @@ function PlasmicAbout__RenderFunc(props: {
                   <React.Fragment>{""}</React.Fragment>
                   {
                     <p.PlasmicLink
-                      data-plasmic-name={"link"}
-                      data-plasmic-override={overrides.link}
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
                         projectcss.__wab_text,
                         projectcss.plasmic_default__inline,
-                        sty.link
+                        sty.link__c4ZfR
                       )}
                       component={Link}
                       href={"https://www.tally.xyz/gov/girlygov-64" as const}
                       platform={"nextjs"}
                       target={"_blank" as const}
                     >
-                      {"View the DAO on Tally"}
+                      {"View a test DAO on Tally"}
+                    </p.PlasmicLink>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__stMv0
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__jIlQk
+                      )}
+                      component={Link}
+                      href={"https://github.com/w3hc/gov/issues" as const}
+                      platform={"nextjs"}
+                      target={"_blank" as const}
+                    >
+                      {"Contribute on Gov"}
+                    </p.PlasmicLink>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__p9CVj
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__p3Dtw
+                      )}
+                      component={Link}
+                      href={"https://discord.gg/bHKJV3NWUQ" as const}
+                      platform={"nextjs"}
+                      target={"_blank" as const}
+                    >
+                      {"Come say hi on Discord"}
                     </p.PlasmicLink>
                   }
                   <React.Fragment>{""}</React.Fragment>
@@ -215,9 +337,8 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "link", "footer"],
+  root: ["root", "header", "footer"],
   header: ["header"],
-  link: ["link"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -226,7 +347,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  link: "a";
   footer: typeof Footer;
 };
 
@@ -292,7 +412,6 @@ export const PlasmicAbout = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    link: makeNodeComponent("link"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicAbout

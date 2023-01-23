@@ -152,6 +152,19 @@
           "cssFilePath": "plasmic/w_3_hc_web/PlasmicProject.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "U9_ketn8GVz",
+          "name": "ProjectsStaging",
+          "type": "managed",
+          "projectId": "rURT7PSYpAQNuaCGHJDPZg",
+          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicProjectsStaging.tsx",
+          "importSpec": {
+            "modulePath": "../pages/projects-staging.tsx"
+          },
+          "cssFilePath": "plasmic/w_3_hc_web/PlasmicProjectsStaging.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

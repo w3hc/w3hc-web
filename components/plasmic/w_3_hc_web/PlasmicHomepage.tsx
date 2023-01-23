@@ -181,7 +181,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.section)}
               >
                 <Reveal
-                  big={true}
+                  big={false}
                   className={classNames("__wab_instance", sty.reveal__lnjAt)}
                   direction={"down" as const}
                   duration={3000 as const}

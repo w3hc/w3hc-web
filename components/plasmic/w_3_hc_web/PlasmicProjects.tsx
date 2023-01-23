@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: 8weNktnDWmJHK/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import Footer from "../../Footer"; // plasmic-import: VnNBHcpuRiqHc/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -54,12 +55,8 @@ export const PlasmicProjects__ArgProps = new Array<ArgPropType>();
 export type PlasmicProjects__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  block4?: p.Flex<"div">;
-  block5?: p.Flex<"div">;
-  block6?: p.Flex<"div">;
-  block?: p.Flex<"div">;
-  block2?: p.Flex<"div">;
-  block3?: p.Flex<"div">;
+  reveal?: p.Flex<typeof Reveal>;
+  text?: p.Flex<"div">;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -152,235 +149,25 @@ function PlasmicProjects__RenderFunc(props: {
 
           <div className={classNames(projectcss.all, sty.freeBox__lPHaW)}>
             <div className={classNames(projectcss.all, sty.freeBox__nCqub)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__aDyrL
-                )}
-              >
-                {"Integrations"}
-              </div>
-
-              <div
-                data-plasmic-name={"block4"}
-                data-plasmic-override={overrides.block4}
-                className={classNames(projectcss.all, sty.block4)}
+              <Reveal
+                data-plasmic-name={"reveal"}
+                data-plasmic-override={overrides.reveal}
+                className={classNames("__wab_instance", sty.reveal)}
+                duration={10000 as const}
+                triggerOnce={true}
               >
                 <div
+                  data-plasmic-name={"text"}
+                  data-plasmic-override={overrides.text}
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__brTgT
+                    sty.text
                   )}
                 >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link___2Uplq
-                        )}
-                        component={Link}
-                        href={`/projects`}
-                        platform={"nextjs"}
-                      >
-                        {"Medusa <> Gov"}
-                      </p.PlasmicLink>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
+                  {"Soon"}
                 </div>
-              </div>
-
-              <div
-                data-plasmic-name={"block5"}
-                data-plasmic-override={overrides.block5}
-                className={classNames(projectcss.all, sty.block5)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__mVqRp
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__gQ2Sc
-                        )}
-                        component={Link}
-                        href={`/projects`}
-                        platform={"nextjs"}
-                      >
-                        {"Lens <> Celo"}
-                      </p.PlasmicLink>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              </div>
-
-              <div
-                data-plasmic-name={"block6"}
-                data-plasmic-override={overrides.block6}
-                className={classNames(projectcss.all, sty.block6)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ejUtP
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__oxCFt
-                        )}
-                        component={Link}
-                        href={`/projects`}
-                        platform={"nextjs"}
-                      >
-                        {"Superfluid <> FEVM"}
-                      </p.PlasmicLink>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              </div>
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gDdS
-                )}
-              >
-                {"In house projects"}
-              </div>
-
-              <div
-                data-plasmic-name={"block"}
-                data-plasmic-override={overrides.block}
-                className={classNames(projectcss.all, sty.block)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__sKyQl
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__xPjYy
-                        )}
-                        component={Link}
-                        href={`/gov`}
-                        platform={"nextjs"}
-                      >
-                        {"Gov"}
-                      </p.PlasmicLink>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              </div>
-
-              <div
-                data-plasmic-name={"block2"}
-                data-plasmic-override={overrides.block2}
-                className={classNames(projectcss.all, sty.block2)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__u1B7I
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link___8BDky
-                        )}
-                        component={Link}
-                        href={`/projects`}
-                        platform={"nextjs"}
-                      >
-                        {"x"}
-                      </p.PlasmicLink>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              </div>
-
-              <div
-                data-plasmic-name={"block3"}
-                data-plasmic-override={overrides.block3}
-                className={classNames(projectcss.all, sty.block3)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__piUZ
-                  )}
-                >
-                  <React.Fragment>
-                    <React.Fragment>{""}</React.Fragment>
-                    {
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__zxXeo
-                        )}
-                        component={Link}
-                        href={`/projects`}
-                        platform={"nextjs"}
-                      >
-                        {"y"}
-                      </p.PlasmicLink>
-                    }
-                    <React.Fragment>{""}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              </div>
+              </Reveal>
             </div>
           </div>
 
@@ -396,24 +183,10 @@ function PlasmicProjects__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "header",
-    "block4",
-    "block5",
-    "block6",
-    "block",
-    "block2",
-    "block3",
-    "footer"
-  ],
+  root: ["root", "header", "reveal", "text", "footer"],
   header: ["header"],
-  block4: ["block4"],
-  block5: ["block5"],
-  block6: ["block6"],
-  block: ["block"],
-  block2: ["block2"],
-  block3: ["block3"],
+  reveal: ["reveal", "text"],
+  text: ["text"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -422,12 +195,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  block4: "div";
-  block5: "div";
-  block6: "div";
-  block: "div";
-  block2: "div";
-  block3: "div";
+  reveal: typeof Reveal;
+  text: "div";
   footer: typeof Footer;
 };
 
@@ -493,12 +262,8 @@ export const PlasmicProjects = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    block4: makeNodeComponent("block4"),
-    block5: makeNodeComponent("block5"),
-    block6: makeNodeComponent("block6"),
-    block: makeNodeComponent("block"),
-    block2: makeNodeComponent("block2"),
-    block3: makeNodeComponent("block3"),
+    reveal: makeNodeComponent("reveal"),
+    text: makeNodeComponent("text"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicProjects
