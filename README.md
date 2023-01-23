@@ -2,7 +2,7 @@
 
 This website is built with: 
 
-- [Plasmic]((https://www.plasmic.app/))
+- [Plasmic](https://www.plasmic.app/)
 - [Next.js](https://nextjs.org/)
 - [Web3Auth](https://web3auth.io/)
 
@@ -25,7 +25,6 @@ To update the content or design, you can [use Plasmic](https://studio.plasmic.ap
 ## Links
 
 - [https://w3hc.org](https://w3hc.org)
-- [IPFS](https://bafybeiehvnb2wivibvfzlgfvcpuutrj5yz2cp4nhjsaokcpneytrcmfkom.ipfs.w3s.link/)
 
 ## Resources
 
