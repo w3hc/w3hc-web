@@ -54,6 +54,7 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
+  ul?: p.Flex<"ul">;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -150,13 +151,13 @@ function PlasmicAbout__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__hZmx1
+                  sty.text__mZxNo
                 )}
               >
                 <React.Fragment>
                   <React.Fragment>
                     {
-                      "The Web3 Hackers Collective is a DAO that's about to launch. We'll use "
+                      "The Web3 Hackers Collective is a DAO created in February 2023. It is deployed to Optimism Mainnet. We're using "
                     }
                   </React.Fragment>
                   {
@@ -166,70 +167,103 @@ function PlasmicAbout__RenderFunc(props: {
                         projectcss.a,
                         projectcss.__wab_text,
                         projectcss.plasmic_default__inline,
-                        sty.link__ey2G2
+                        sty.link__ktot2
                       )}
                       component={Link}
-                      href={"https://github.com/w3hc/gov" as const}
                       platform={"nextjs"}
-                      target={"_blank" as const}
                     >
                       {"Gov"}
                     </p.PlasmicLink>
                   }
                   <React.Fragment>
                     {
-                      " which is an implementation of Open Zeppelin's Governor contract in combination with NFTs. "
+                      " which is an implementation of Open Zeppelin's Governor contract in combination with NFTs. \n\nOur mission statement is: "
                     }
                   </React.Fragment>
-                </React.Fragment>
-              </div>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {
+                      '"We want to build integrations through mentoring and learning."'
+                    }
+                  </span>
+                  <React.Fragment>
+                    {
+                      "\n\nAny proposal should meet one of the following criteria:\n\n"
+                    }
+                  </React.Fragment>
+                  {
+                    <ul
+                      data-plasmic-name={"ul"}
+                      data-plasmic-override={overrides.ul}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.ul,
+                        sty.ul
+                      )}
+                    >
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li___0Qg81
+                        )}
+                      >
+                        {"Organize local hackathons, workshops and meetups"}
+                      </li>
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__f0Iea
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "We are currently in the process of deciding our own mission statement. We already know we want to work on many different software "
-                    }
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"integrations"}
-                  </span>
-                  <React.Fragment>
-                    {
-                      " identified as relevant. These can be opportunities to put productive "
-                    }
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"mentoring"}
-                  </span>
-                  <React.Fragment>
-                    {
-                      " sessions in place. Mutual aid matters to us. Also, we'll do our best to improve "
-                    }
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"education"}
-                  </span>
-                  <React.Fragment>
-                    {
-                      " on what's at stake with the Web3 movement. A lot of everyday people still don't seem to understand it."
-                    }
-                  </React.Fragment>
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__kdlJb
+                        )}
+                      >
+                        {
+                          "Request retroactive funding for a successful integration"
+                        }
+                      </li>
+
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__oJVc1
+                        )}
+                      >
+                        {"Develop and maintain Gov"}
+                      </li>
+
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__cZrr
+                        )}
+                      >
+                        {"Help people to setup a DAO using Gov"}
+                      </li>
+
+                      <li
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.li,
+                          projectcss.__wab_text,
+                          sty.li__u2Jx2
+                        )}
+                      >
+                        {
+                          "House keeping (voting parameters, manifesto and metadata updates)"
+                        }
+                      </li>
+                    </ul>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
               </div>
 
@@ -252,11 +286,11 @@ function PlasmicAbout__RenderFunc(props: {
                         sty.link__c4ZfR
                       )}
                       component={Link}
-                      href={"https://www.tally.xyz/gov/girlygov-64" as const}
+                      href={"https://www.tally.xyz/gov/w3hc" as const}
                       platform={"nextjs"}
                       target={"_blank" as const}
                     >
-                      {"View a test DAO on Tally"}
+                      {"View the DAO on Tally"}
                     </p.PlasmicLink>
                   }
                   <React.Fragment>{""}</React.Fragment>
@@ -337,8 +371,9 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "footer"],
+  root: ["root", "header", "ul", "footer"],
   header: ["header"],
+  ul: ["ul"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -347,6 +382,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
+  ul: "ul";
   footer: typeof Footer;
 };
 
@@ -412,6 +448,7 @@ export const PlasmicAbout = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    ul: makeNodeComponent("ul"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicAbout
