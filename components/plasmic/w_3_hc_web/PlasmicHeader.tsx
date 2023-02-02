@@ -55,6 +55,7 @@ export const PlasmicHeader__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHeader__OverridesType = {
   root?: p.Flex<"div">;
+  img?: p.Flex<typeof p.PlasmicImg>;
   login?: p.Flex<typeof Button>;
   text?: p.Flex<"div">;
 };
@@ -118,14 +119,31 @@ function PlasmicHeader__RenderFunc(props: {
               className={classNames(
                 projectcss.all,
                 projectcss.a,
-                projectcss.__wab_text,
-                sty.link__kLvX
+                sty.link__my3Ed
               )}
               component={Link}
               href={`/`}
               platform={"nextjs"}
             >
-              {"W3HC"}
+              <p.PlasmicImg
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"70px" as const}
+                displayMaxWidth={"70px" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/w_3_hc_web/images/pa30Png.png",
+                  fullWidth: 602,
+                  fullHeight: 602,
+                  aspectRatio: undefined
+                }}
+              />
             </p.PlasmicLink>
           </div>
         ) : null}
@@ -194,7 +212,8 @@ function PlasmicHeader__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "login", "text"],
+  root: ["root", "img", "login", "text"],
+  img: ["img"],
   login: ["login", "text"],
   text: ["text"]
 } as const;
@@ -203,6 +222,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  img: typeof p.PlasmicImg;
   login: typeof Button;
   text: "div";
 };
@@ -268,6 +288,7 @@ export const PlasmicHeader = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    img: makeNodeComponent("img"),
     login: makeNodeComponent("login"),
     text: makeNodeComponent("text"),
 

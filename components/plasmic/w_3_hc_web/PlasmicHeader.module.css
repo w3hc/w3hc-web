@@ -10,7 +10,7 @@
   width: 100%;
   background: var(--token-_efKsYmq0_KOgM);
   min-width: 0;
-  padding: 8px 8px 60px;
+  padding: 8px;
 }
 .freeBox___2HSqo {
   flex-direction: row;
@@ -50,12 +50,21 @@
   max-width: 100%;
   min-width: 0;
 }
-.link__kLvX {
-  height: auto;
-  max-width: 800px;
-  color: var(--token-u_cGwS23As82q0);
-  font-weight: 700;
-  font-size: 20px;
+.link__my3Ed {
+  position: relative;
+  display: flex;
+}
+.img {
+  object-fit: cover;
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 100%;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
 }
 .freeBox__r6Hua {
   flex-direction: row;
