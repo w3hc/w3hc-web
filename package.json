@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@plasmicapp/cli": "^0.1.194",
-    "@plasmicapp/host": "^1.0.93",
+    "@plasmicapp/host": "^1.0.107",
     "@plasmicapp/react-web": "^0.2.139",
     "@plasmicpkgs/react-awesome-reveal": "^3.8.93",
     "@web3auth/base": "^4.0.0",

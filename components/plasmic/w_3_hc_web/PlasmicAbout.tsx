@@ -14,6 +14,7 @@ import * as React from "react";
 
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
+import { useRouter } from "next/router";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
@@ -76,6 +77,7 @@ function PlasmicAbout__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
+  const __nextRouter = useRouter();
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
@@ -84,6 +86,8 @@ function PlasmicAbout__RenderFunc(props: {
     ...args,
     ...variants
   };
+  const refsRef = React.useRef({});
+  const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
 
@@ -157,7 +161,7 @@ function PlasmicAbout__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>
                     {
-                      "The Web3 Hackers Collective is a DAO created in February 2023. It is deployed to Optimism Mainnet. We're using "
+                      "The Web3 Hackers Collective is a DAO created on February 24, 2023. It is deployed to Optimism Mainnet. We're using "
                     }
                   </React.Fragment>
                   {
@@ -170,7 +174,9 @@ function PlasmicAbout__RenderFunc(props: {
                         sty.link__ktot2
                       )}
                       component={Link}
+                      href={"https://github.com/w3hc/gov" as const}
                       platform={"nextjs"}
+                      target={"_blank" as const}
                     >
                       {"Gov"}
                     </p.PlasmicLink>
@@ -235,7 +241,9 @@ function PlasmicAbout__RenderFunc(props: {
                           sty.li__oJVc1
                         )}
                       >
-                        {"Develop and maintain Gov"}
+                        {
+                          "Develop and maintain Gov: a DAO framework built with Governor and NFTs"
+                        }
                       </li>
 
                       <li
@@ -246,20 +254,7 @@ function PlasmicAbout__RenderFunc(props: {
                           sty.li__cZrr
                         )}
                       >
-                        {"Help people to setup a DAO using Gov"}
-                      </li>
-
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li__u2Jx2
-                        )}
-                      >
-                        {
-                          "House keeping (voting parameters, manifesto and metadata updates)"
-                        }
+                        {"Help people to setup their own DAO"}
                       </li>
                     </ul>
                   }
@@ -286,7 +281,9 @@ function PlasmicAbout__RenderFunc(props: {
                         sty.link__c4ZfR
                       )}
                       component={Link}
-                      href={"https://www.tally.xyz/gov/w3hc" as const}
+                      href={
+                        "https://www.tally.xyz/gov/web3-hackers-collective" as const
+                      }
                       platform={"nextjs"}
                       target={"_blank" as const}
                     >

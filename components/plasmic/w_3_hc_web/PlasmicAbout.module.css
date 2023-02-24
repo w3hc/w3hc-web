@@ -66,6 +66,9 @@
     font-size: 24px;
   }
 }
+.link__ktot2 {
+  color: var(--token-zqwdlV4ZdEYm_k);
+}
 .ul {
   display: flex;
   flex-direction: column;

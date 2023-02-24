@@ -14,6 +14,7 @@ import * as React from "react";
 
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
+import { useRouter } from "next/router";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
@@ -35,12 +36,16 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: 8weNktnDWmJHK/component
+import Button from "../../Button"; // plasmic-import: 3c-nMnpAWfnFh/component
 import Footer from "../../Footer"; // plasmic-import: VnNBHcpuRiqHc/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_w_3_hc_web.module.css"; // plasmic-import: rURT7PSYpAQNuaCGHJDPZg/projectcss
 import sty from "./PlasmicGov.module.css"; // plasmic-import: UqAN3orjkq/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: QSJtYEMVjaEpvn/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: O9O6mz1RdnHmE8/icon
 
 export type PlasmicGov__VariantMembers = {};
 export type PlasmicGov__VariantsArgs = {};
@@ -54,7 +59,9 @@ export const PlasmicGov__ArgProps = new Array<ArgPropType>();
 export type PlasmicGov__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  img?: p.Flex<typeof p.PlasmicImg>;
+  h1?: p.Flex<"h1">;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
+  button?: p.Flex<typeof Button>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -76,6 +83,7 @@ function PlasmicGov__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
+  const __nextRouter = useRouter();
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
@@ -84,6 +92,8 @@ function PlasmicGov__RenderFunc(props: {
     ...args,
     ...variants
   };
+  const refsRef = React.useRef({});
+  const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
 
@@ -147,11 +157,77 @@ function PlasmicGov__RenderFunc(props: {
 
           <div className={classNames(projectcss.all, sty.freeBox__bFw8)}>
             <div className={classNames(projectcss.all, sty.freeBox__ns1Sy)}>
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
+                  sty.h1
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <p.PlasmicLink
+                      data-plasmic-name={"link"}
+                      data-plasmic-override={overrides.link}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link
+                      )}
+                      component={Link}
+                      href={"https://github.com/w3hc/gov" as const}
+                      platform={"nextjs"}
+                      target={"_blank" as const}
+                    >
+                      {"Gov"}
+                    </p.PlasmicLink>
+                  }
+                  <React.Fragment>
+                    {" is a DAO framework built for everyday people"}
+                  </React.Fragment>
+                </React.Fragment>
+              </h1>
+
+              <div className={classNames(projectcss.all, sty.freeBox__t96W)}>
+                <Button
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
+                  link={"https://form.jotform.com/230527850256052" as const}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rcnIs
+                    )}
+                  >
+                    {"Create your DAO"}
+                  </div>
+                </Button>
+              </div>
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qubCd
+                )}
+              >
+                {
+                  "Gov is a DAO framework built with Open Zeppelin’s Governor contract in combination with NFTs. It provides a coordination tool that fits the needs of everyday people.\n\nWe’re inviting orgs, federations of orgs, activists, neighborhoods, stewards of the commons, collectives, and all communities to create their own DAO. The Web3 Hackers Collective has recently released the beta version of Gov. We want to run five different pilots and focus exclusively on the impact evaluation process of each DAO.\n\nGov can be viewed as a retroactive funding tool: people can use it to fund on-the-ground actions that has already been delivered (as opposed to funding actions planned in the future).\n\nGov is fully compatible with Tally (they have the best existing UI in town!)\n\nWe’re currently supporting Optimism Mainnet, Ethereum Goerli Testnet, Optimism Goerli Testnet, and Arbitrum Goerli Testnet.\n\nAlso, we have successfully tested Medusa (Arbitrum Goerli Testnet only for now). This allows anyone to share a document that can only be decrypted by the members of a given DAO."
+                }
+              </div>
+
               <p.PlasmicImg
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img)}
+                className={classNames(sty.img__vozN5)}
                 displayHeight={"auto" as const}
                 displayMaxHeight={"none" as const}
                 displayMaxWidth={"100%" as const}
@@ -163,6 +239,24 @@ function PlasmicGov__RenderFunc(props: {
                   src: "/plasmic/w_3_hc_web/images/contractsExplainedpng.png",
                   fullWidth: 3140,
                   fullHeight: 2236,
+                  aspectRatio: undefined
+                }}
+              />
+
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__nuTos)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/w_3_hc_web/images/carbon10Png.png",
+                  fullWidth: 1870,
+                  fullHeight: 4946,
                   aspectRatio: undefined
                 }}
               />
@@ -181,9 +275,11 @@ function PlasmicGov__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "img", "footer"],
+  root: ["root", "header", "h1", "link", "button", "footer"],
   header: ["header"],
-  img: ["img"],
+  h1: ["h1", "link"],
+  link: ["link"],
+  button: ["button"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -192,7 +288,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  img: typeof p.PlasmicImg;
+  h1: "h1";
+  link: "a";
+  button: typeof Button;
   footer: typeof Footer;
 };
 
@@ -258,7 +356,9 @@ export const PlasmicGov = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    img: makeNodeComponent("img"),
+    h1: makeNodeComponent("h1"),
+    link: makeNodeComponent("link"),
+    button: makeNodeComponent("button"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicGov
