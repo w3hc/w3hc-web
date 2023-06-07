@@ -194,6 +194,11 @@
           "id": "Eg_oIbP3s",
           "name": "pa30.png",
           "filePath": "../public/plasmic/w_3_hc_web/images/pa30Png.png"
+        },
+        {
+          "id": "frDAmRBow",
+          "name": "carbon (10).png",
+          "filePath": "../public/plasmic/w_3_hc_web/images/carbon10Png.png"
         }
       ],
       "indirect": false,
@@ -226,6 +231,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.194",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.194/dist/plasmic.schema.json"
+  "cliVersion": "0.1.261",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.261/dist/plasmic.schema.json"
 }
