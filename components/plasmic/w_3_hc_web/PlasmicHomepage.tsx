@@ -489,9 +489,10 @@ export const PlasmicHomepage = Object.assign(
     // Page metadata
     pageMetadata: {
       title: "Web3 Hackers Collective",
-      description: "Integrations, mentoring and education",
+      description:
+        "We want to build integrations through mentoring and learning.",
       ogImageSrc:
-        "https://site-assets.plasmic.app/3c0e347aa4396d77ac50eb8b272d837e.png",
+        "https://site-assets.plasmic.app/16913ee9842ff1d4b5c32ddeb18c5be8.png",
       canonical: "https://w3hc.org"
     }
   }

@@ -121,7 +121,21 @@ function PlasmicGov__RenderFunc(props: {
           name="twitter:title"
           content={PlasmicGov.pageMetadata.title}
         />
-
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicGov.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicGov.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicGov.pageMetadata.description}
+        />
         <meta
           key="og:image"
           property="og:image"
@@ -371,9 +385,10 @@ export const PlasmicGov = Object.assign(
     // Page metadata
     pageMetadata: {
       title: "W3HC - Gov",
-      description: "",
+      description:
+        "We want to build integrations through mentoring and learning.",
       ogImageSrc:
-        "https://site-assets.plasmic.app/3c0e347aa4396d77ac50eb8b272d837e.png",
+        "https://site-assets.plasmic.app/16913ee9842ff1d4b5c32ddeb18c5be8.png",
       canonical: "https://w3hc.org/gov"
     }
   }
