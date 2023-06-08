@@ -1,5 +1,7 @@
 # W3HC Website
 
+Live at [https://w3hc.org/](https://w3hc.org/)
+
 This website is built with: 
 
 - [Plasmic](https://www.plasmic.app/)
@@ -8,23 +10,31 @@ This website is built with:
 
 ## Install
 
-```sh
+```js
 npm i
 ```
 
 ## Run
 
-```sh
+```js
 npm run dev
 ```
 
-## Update
+## Contribute
 
-To update the content or design, you can [use Plasmic](https://studio.plasmic.app/projects/rURT7PSYpAQNuaCGHJDPZg). To modify the code, you can make a pull request.
+To edit the content or design, you can [use Plasmic](https://studio.plasmic.app/projects/rURT7PSYpAQNuaCGHJDPZg). Then in your terminal, just type: 
 
-## Links
+```js
+plasmic watch
+```
 
-- [https://w3hc.org](https://w3hc.org)
+That will sync your changes with your local repository.
+
+## Build
+
+```
+npm run push
+```
 
 ## Resources
 
@@ -34,7 +44,7 @@ To update the content or design, you can [use Plasmic](https://studio.plasmic.ap
 
 ## Support
 
-You can contact me via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discord.gg/bHKJV3NWUQ), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
+You can contact Julien via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discord.gg/uSxzJp3J76), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
 
 ## License
 
