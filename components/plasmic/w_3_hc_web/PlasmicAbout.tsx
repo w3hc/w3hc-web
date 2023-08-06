@@ -46,6 +46,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_w_3_hc_web.module.css"; // plasmic-import: rURT7PSYpAQNuaCGHJDPZg/projectcss
 import sty from "./PlasmicAbout.module.css"; // plasmic-import: JRM9PBGrBO/css
 
+createPlasmicElementProxy;
+
 export type PlasmicAbout__VariantMembers = {};
 export type PlasmicAbout__VariantsArgs = {};
 type VariantPropType = keyof PlasmicAbout__VariantsArgs;
@@ -58,7 +60,6 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  ul?: p.Flex<"ul">;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -121,7 +122,21 @@ function PlasmicAbout__RenderFunc(props: {
           name="twitter:title"
           content={PlasmicAbout.pageMetadata.title}
         />
-
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicAbout.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicAbout.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicAbout.pageMetadata.description}
+        />
         <meta
           key="og:image"
           property="og:image"
@@ -175,31 +190,7 @@ function PlasmicAbout__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>
                       {
-                        "The Web3 Hackers Collective is a DAO created on February 24, 2023. It is deployed to Optimism Mainnet. We're using "
-                      }
-                    </React.Fragment>
-                    {
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__ktot2
-                        )}
-                        component={Link}
-                        href={"https://github.com/w3hc/gov" as const}
-                        platform={"nextjs"}
-                        target={"_blank" as const}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? "Gov"
-                          : "Gov"}
-                      </p.PlasmicLink>
-                    }
-                    <React.Fragment>
-                      {
-                        " which is an implementation of Open Zeppelin's Governor contract in combination with NFTs. \n\nOur mission statement is:\n\n "
+                        "The Web3 Hackers Collective (W3HC) is a DAO created on February 24, 2023. It is deployed to Optimism. \n\nOur mission statement is:\n\n"
                       }
                     </React.Fragment>
                     <span
@@ -212,17 +203,15 @@ function PlasmicAbout__RenderFunc(props: {
                     </span>
                     <React.Fragment>
                       {
-                        "\n\nAny proposal should meet one of the following criteria:\n\n"
+                        "\n\nInstead of reinventing the wheel from hackathons to hackathons, our approach is to identify relevant Web3 integrations to achieve, and to seize these opportunities to do as much mentoring as possible.\n\nAny proposal submitted to the DAO should meet one of the following criteria:\n\n"
                       }
                     </React.Fragment>
                     {
                       <ul
-                        data-plasmic-name={"ul"}
-                        data-plasmic-override={overrides.ul}
                         className={classNames(
                           projectcss.all,
                           projectcss.ul,
-                          sty.ul
+                          sty.ul__cIolv
                         )}
                       >
                         <li
@@ -230,48 +219,44 @@ function PlasmicAbout__RenderFunc(props: {
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li___0Qg81
+                            sty.li__hXmD
                           )}
                         >
-                          {hasVariant(globalVariants, "screen", "mobileOnly")
-                            ? "Organize local hackathons, workshops and meetups"
-                            : "Organize local hackathons, workshops and meetups"}
+                          {"Organize local hackathons, workshops and meetups"}
                         </li>
                         <li
                           className={classNames(
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li__kdlJb
+                            sty.li__rMbPm
                           )}
                         >
-                          {hasVariant(globalVariants, "screen", "mobileOnly")
-                            ? "Request retroactive funding for a successful integration"
-                            : "Request retroactive funding for a successful integration"}
+                          {
+                            "Request retroactive funding for a successful integration"
+                          }
                         </li>
                         <li
                           className={classNames(
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li__oJVc1
+                            sty.li__wVbsm
                           )}
                         >
-                          {hasVariant(globalVariants, "screen", "mobileOnly")
-                            ? "Develop and maintain Gov: a DAO framework built with Governor and NFTs"
-                            : "Develop and maintain Gov: a DAO framework built with Governor and NFTs"}
+                          {
+                            "Develop and maintain Gov: a DAO framework built with Governor and NFTs"
+                          }
                         </li>
                         <li
                           className={classNames(
                             projectcss.all,
                             projectcss.li,
                             projectcss.__wab_text,
-                            sty.li__cZrr
+                            sty.li__sr8Xj
                           )}
                         >
-                          {hasVariant(globalVariants, "screen", "mobileOnly")
-                            ? "Help people to setup their own DAO"
-                            : "Help people to setup their own DAO"}
+                          {"Help people to setup their own DAO"}
                         </li>
                       </ul>
                     }
@@ -281,31 +266,7 @@ function PlasmicAbout__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>
                       {
-                        "The Web3 Hackers Collective is a DAO created on February 24, 2023. It is deployed to Optimism Mainnet. We're using "
-                      }
-                    </React.Fragment>
-                    {
-                      <p.PlasmicLink
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.a,
-                          projectcss.__wab_text,
-                          projectcss.plasmic_default__inline,
-                          sty.link__ktot2
-                        )}
-                        component={Link}
-                        href={"https://github.com/w3hc/gov" as const}
-                        platform={"nextjs"}
-                        target={"_blank" as const}
-                      >
-                        {hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? "Gov"
-                          : "Gov"}
-                      </p.PlasmicLink>
-                    }
-                    <React.Fragment>
-                      {
-                        " which is an implementation of Open Zeppelin's Governor contract in combination with NFTs. \n\nOur mission statement is:\n\n"
+                        "The Web3 Hackers Collective (W3HC) is a DAO created on February 24, 2023. It is deployed to Optimism. \n\nOur mission statement is:\n\n"
                       }
                     </React.Fragment>
                     <span
@@ -318,17 +279,15 @@ function PlasmicAbout__RenderFunc(props: {
                     </span>
                     <React.Fragment>
                       {
-                        "\n\nAny proposal should meet one of the following criteria:\n\n"
+                        "\n\nInstead of reinventing the wheel from hackathons to hackathons, our approach is to identify relevant Web3 integrations to achieve, and to seize these opportunities to do as much mentoring as possible.\n\nAny proposal submitted to the DAO should meet one of the following criteria:\n\n"
                       }
                     </React.Fragment>
                     {
                       <ul
-                        data-plasmic-name={"ul"}
-                        data-plasmic-override={overrides.ul}
                         className={classNames(
                           projectcss.all,
                           projectcss.ul,
-                          sty.ul
+                          sty.ul__hrYr0
                         )}
                       >
                         <li
@@ -363,9 +322,43 @@ function PlasmicAbout__RenderFunc(props: {
                             sty.li__oJVc1
                           )}
                         >
-                          {hasVariant(globalVariants, "screen", "mobileOnly")
-                            ? "Develop and maintain Gov: a DAO framework built with Governor and NFTs"
-                            : "Develop and maintain Gov: a DAO framework built with Governor and NFTs"}
+                          {hasVariant(
+                            globalVariants,
+                            "screen",
+                            "mobileOnly"
+                          ) ? (
+                            "Develop and maintain Gov: a DAO framework built with Governor and NFTs"
+                          ) : (
+                            <React.Fragment>
+                              <React.Fragment>
+                                {"Develop and maintain "}
+                              </React.Fragment>
+                              {
+                                <p.PlasmicLink
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.a,
+                                    projectcss.__wab_text,
+                                    projectcss.plasmic_default__inline,
+                                    sty.link__pmPK
+                                  )}
+                                  component={Link}
+                                  href={
+                                    "https://w3hc.github.io/gov-docs/" as const
+                                  }
+                                  platform={"nextjs"}
+                                  target={"_blank" as const}
+                                >
+                                  {"Gov"}
+                                </p.PlasmicLink>
+                              }
+                              <React.Fragment>
+                                {
+                                  ": a DAO framework built with Governor and NFTs"
+                                }
+                              </React.Fragment>
+                            </React.Fragment>
+                          )}
                         </li>
                         <li
                           className={classNames(
@@ -495,11 +488,40 @@ function PlasmicAbout__RenderFunc(props: {
                         sty.link__p3Dtw
                       )}
                       component={Link}
-                      href={"https://discord.gg/bHKJV3NWUQ" as const}
+                      href={"https://discord.com/invite/uSxzJp3J76" as const}
                       platform={"nextjs"}
                       target={"_blank" as const}
                     >
                       {"Come say hi on Discord"}
+                    </p.PlasmicLink>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__galRg
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link___8CMpT
+                      )}
+                      component={Link}
+                      href={"https://www.youtube.com/@W3HC" as const}
+                      platform={"nextjs"}
+                      target={"_blank" as const}
+                    >
+                      {"Watch us building"}
                     </p.PlasmicLink>
                   }
                   <React.Fragment>{""}</React.Fragment>
@@ -519,9 +541,8 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "ul", "footer"],
+  root: ["root", "header", "footer"],
   header: ["header"],
-  ul: ["ul"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -530,7 +551,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  ul: "ul";
   footer: typeof Footer;
 };
 
@@ -595,7 +615,6 @@ export const PlasmicAbout = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    ul: makeNodeComponent("ul"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicAbout
@@ -605,9 +624,10 @@ export const PlasmicAbout = Object.assign(
     // Page metadata
     pageMetadata: {
       title: "W3HC - About",
-      description: "",
+      description:
+        "We want to build integrations through mentoring and learning.",
       ogImageSrc:
-        "https://site-assets.plasmic.app/3c0e347aa4396d77ac50eb8b272d837e.png",
+        "https://site-assets.plasmic.app/16913ee9842ff1d4b5c32ddeb18c5be8.png",
       canonical: "https://w3hc.org/about"
     }
   }

@@ -102,19 +102,6 @@
           "plumeType": "button"
         },
         {
-          "id": "5zjokN2A33jNz",
-          "name": "Projects",
-          "type": "managed",
-          "projectId": "rURT7PSYpAQNuaCGHJDPZg",
-          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicProjects.tsx",
-          "importSpec": {
-            "modulePath": "../pages/projects.tsx"
-          },
-          "cssFilePath": "plasmic/w_3_hc_web/PlasmicProjects.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "JRM9PBGrBO",
           "name": "About",
           "type": "managed",
@@ -154,15 +141,28 @@
           "componentType": "component"
         },
         {
-          "id": "U9_ketn8GVz",
-          "name": "ProjectsStaging",
+          "id": "5zjokN2A33jNz",
+          "name": "Soon",
           "type": "managed",
           "projectId": "rURT7PSYpAQNuaCGHJDPZg",
-          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicProjectsStaging.tsx",
+          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicSoon.tsx",
           "importSpec": {
-            "modulePath": "../pages/projects-staging.tsx"
+            "modulePath": "../pages/soon.tsx"
           },
-          "cssFilePath": "plasmic/w_3_hc_web/PlasmicProjectsStaging.module.css",
+          "cssFilePath": "plasmic/w_3_hc_web/PlasmicSoon.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "U9_ketn8GVz",
+          "name": "Projects",
+          "type": "managed",
+          "projectId": "rURT7PSYpAQNuaCGHJDPZg",
+          "renderModuleFilePath": "plasmic/w_3_hc_web/PlasmicProjects.tsx",
+          "importSpec": {
+            "modulePath": "../pages/projects.tsx"
+          },
+          "cssFilePath": "plasmic/w_3_hc_web/PlasmicProjects.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }

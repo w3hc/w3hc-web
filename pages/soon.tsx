@@ -4,23 +4,23 @@ import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
 
 import { ScreenVariantProvider } from "../components/plasmic/w_3_hc_web/PlasmicGlobalVariant__Screen";
-import { PlasmicProjects } from "../components/plasmic/w_3_hc_web/PlasmicProjects";
+import { PlasmicSoon } from "../components/plasmic/w_3_hc_web/PlasmicSoon";
 import { useRouter } from "next/router";
 
-function Projects() {
-  // Use PlasmicProjects to render this component as it was
+function Soon() {
+  // Use PlasmicSoon to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicProjects are:
+  // Props you can pass into PlasmicSoon are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicProjects is wrapped by your project's global
+  // By default, PlasmicSoon is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -29,9 +29,9 @@ function Projects() {
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
-      <PlasmicProjects />
+      <PlasmicSoon />
     </ph.PageParamsProvider>
   );
 }
 
-export default Projects;
+export default Soon;
