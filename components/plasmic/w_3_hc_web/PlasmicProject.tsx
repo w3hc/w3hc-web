@@ -42,6 +42,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_w_3_hc_web.module.css"; // plasmic-import: rURT7PSYpAQNuaCGHJDPZg/projectcss
 import sty from "./PlasmicProject.module.css"; // plasmic-import: jyATwjnQCA/css
 
+createPlasmicElementProxy;
+
 export type PlasmicProject__VariantMembers = {};
 export type PlasmicProject__VariantsArgs = {};
 type VariantPropType = keyof PlasmicProject__VariantsArgs;

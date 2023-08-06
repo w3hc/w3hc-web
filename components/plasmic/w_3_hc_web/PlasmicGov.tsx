@@ -48,6 +48,8 @@ import sty from "./PlasmicGov.module.css"; // plasmic-import: UqAN3orjkq/css
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: QSJtYEMVjaEpvn/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: O9O6mz1RdnHmE8/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicGov__VariantMembers = {};
 export type PlasmicGov__VariantsArgs = {};
 type VariantPropType = keyof PlasmicGov__VariantsArgs;
@@ -121,7 +123,21 @@ function PlasmicGov__RenderFunc(props: {
           name="twitter:title"
           content={PlasmicGov.pageMetadata.title}
         />
-
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicGov.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicGov.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicGov.pageMetadata.description}
+        />
         <meta
           key="og:image"
           property="og:image"
@@ -227,7 +243,7 @@ function PlasmicGov__RenderFunc(props: {
                 )}
               >
                 {
-                  "Gov is a DAO framework built with Open Zeppelin’s Governor contract in combination with NFTs. It provides a coordination tool that fits the needs of everyday people.\n\nWe’re inviting orgs, federations of orgs, activists, neighborhoods, stewards of the commons, collectives, and all communities to create their own DAO. The Web3 Hackers Collective has recently released the beta version of Gov. We want to run five different pilots and focus exclusively on the impact evaluation process of each DAO.\n\nGov can be viewed as a retroactive funding tool: people can use it to fund on-the-ground actions that has already been delivered (as opposed to funding actions planned in the future).\n\nGov is fully compatible with Tally (they have the best existing UI in town!)\n\nWe’re currently supporting Optimism Mainnet, Ethereum Goerli Testnet, Optimism Goerli Testnet, and Arbitrum Goerli Testnet.\n\nAlso, we have successfully tested Medusa (Arbitrum Goerli Testnet only for now). This allows anyone to share a document that can only be decrypted by the members of a given DAO."
+                  "Gov is a DAO framework built with Open Zeppelin\u2019s Governor contract in combination with NFTs. It provides a coordination tool that fits the needs of everyday people.\n\nWe\u2019re inviting orgs, federations of orgs, activists, neighborhoods, stewards of the commons, collectives, and all communities to create their own DAO. The Web3 Hackers Collective has recently released the beta version of Gov. We want to run five different pilots and focus exclusively on the impact evaluation process of each DAO.\n\nGov can be viewed as a retroactive funding tool: people can use it to fund on-the-ground actions that has already been delivered (as opposed to funding actions planned in the future).\n\nGov is fully compatible with Tally (they have the best existing UI in town!)\n\nWe\u2019re currently supporting Optimism Mainnet, Ethereum Goerli Testnet, Optimism Goerli Testnet, and Arbitrum Goerli Testnet.\n\nAlso, we have successfully tested Medusa (Arbitrum Goerli Testnet only for now). This allows anyone to share a document that can only be decrypted by the members of a given DAO."
                 }
               </div>
               <p.PlasmicImg
@@ -371,9 +387,10 @@ export const PlasmicGov = Object.assign(
     // Page metadata
     pageMetadata: {
       title: "W3HC - Gov",
-      description: "",
+      description:
+        "We want to build integrations through mentoring and learning.",
       ogImageSrc:
-        "https://site-assets.plasmic.app/3c0e347aa4396d77ac50eb8b272d837e.png",
+        "https://site-assets.plasmic.app/16913ee9842ff1d4b5c32ddeb18c5be8.png",
       canonical: "https://w3hc.org/gov"
     }
   }

@@ -46,6 +46,8 @@ import sty from "./PlasmicHeader.module.css"; // plasmic-import: 8weNktnDWmJHK/c
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: QSJtYEMVjaEpvn/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: O9O6mz1RdnHmE8/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicHeader__VariantMembers = {};
 export type PlasmicHeader__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHeader__VariantsArgs;
