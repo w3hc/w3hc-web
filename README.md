@@ -20,7 +20,13 @@ npm run dev
 
 ## Update
 
-To update the content or design, you can [use Plasmic](https://studio.plasmic.app/projects/rURT7PSYpAQNuaCGHJDPZg). To modify the code, you can make a pull request.
+To update the content or design, you can [use Plasmic](https://studio.plasmic.app/projects/rURT7PSYpAQNuaCGHJDPZg), then sync locally: 
+
+```
+plasmic watch
+```
+
+And then create an issue, pull request, and merge. 
 
 ## Links
 
