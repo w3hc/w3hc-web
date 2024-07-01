@@ -17,27 +17,50 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
+
 import Header from "../../Header"; // plasmic-import: 8weNktnDWmJHK/component
-import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import Footer from "../../Footer"; // plasmic-import: VnNBHcpuRiqHc/component
 
 import { useScreenVariants as useScreenVariantshCgzN1EtzMdy } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: hCGZ-N1etzMDY/globalVariant
@@ -59,22 +82,16 @@ type ArgPropType = keyof PlasmicHomepage__ArgsType;
 export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
-  root?: p.Flex<"div">;
-  header?: p.Flex<typeof Header>;
-  freeBox?: p.Flex<"div">;
-  section?: p.Flex<"section">;
-  footer?: p.Flex<typeof Footer>;
+  root?: Flex__<"div">;
+  header?: Flex__<typeof Header>;
+  freeBox?: Flex__<"div">;
+  section?: Flex__<"section">;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultHomepageProps {}
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -90,21 +107,18 @@ function PlasmicHomepage__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-
-  const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantshCgzN1EtzMdy()
@@ -180,216 +194,214 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames("__wab_instance", sty.header)}
           />
 
-          {true ? (
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <Stack__
+              as={"section"}
+              data-plasmic-name={"section"}
+              data-plasmic-override={overrides.section}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.section)}
             >
-              <p.Stack
-                as={"section"}
-                data-plasmic-name={"section"}
-                data-plasmic-override={overrides.section}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.section)}
+              <Reveal
+                big={false}
+                className={classNames("__wab_instance", sty.reveal__lnjAt)}
+                direction={"down"}
+                duration={3000}
+                effect={"fade"}
+                triggerOnce={true}
               >
-                <Reveal
-                  big={false}
-                  className={classNames("__wab_instance", sty.reveal__lnjAt)}
-                  direction={"down" as const}
-                  duration={3000 as const}
-                  effect={"fade" as const}
-                  triggerOnce={true}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xbAvQ
+                  )}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__xbAvQ
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? "Web3 \nHackers \nCollective"
-                      : "Web3 Hackers Collective"}
-                  </div>
-                </Reveal>
-                <Reveal
-                  big={true}
-                  cascade={false}
-                  className={classNames("__wab_instance", sty.reveal___8Hfe2)}
-                  delay={3000 as const}
-                  duration={3000 as const}
-                  effect={"fade" as const}
-                  triggerOnce={true}
+                  {hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "Web3 \nHackers \nCollective"
+                    : "Web3 Hackers Collective"}
+                </div>
+              </Reveal>
+              <Reveal
+                big={true}
+                cascade={false}
+                className={classNames("__wab_instance", sty.reveal___8Hfe2)}
+                delay={3000}
+                duration={3000}
+                effect={"fade"}
+                triggerOnce={true}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__aBgRi
+                  )}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__aBgRi
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "mobileOnly") ? (
-                      <React.Fragment>
-                        <React.Fragment>{"We want to build "}</React.Fragment>
-                        {
-                          <p.PlasmicLink
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__pm9Xk
-                            )}
-                            component={Link}
-                            platform={"nextjs"}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? "integrations"
-                              : "integrations"}
-                          </p.PlasmicLink>
-                        }
-                        <React.Fragment>{" \nthrough"}</React.Fragment>
-                        {
-                          <p.PlasmicLink
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__rqc7B
-                            )}
-                            component={Link}
-                            platform={"nextjs"}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? " mentoring"
-                              : " mentoring"}
-                          </p.PlasmicLink>
-                        }
-                        <React.Fragment>{" \nand \n"}</React.Fragment>
-                        {
-                          <p.PlasmicLink
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__n57Xe
-                            )}
-                            component={Link}
-                            platform={"nextjs"}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? "education"
-                              : "education"}
-                          </p.PlasmicLink>
-                        }
-                        <React.Fragment>{"."}</React.Fragment>
-                        {
-                          <p.PlasmicLink
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__sIxqc
-                            )}
-                            component={Link}
-                            href={`/`}
-                            platform={"nextjs"}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? ""
-                              : " mentoring"}
-                          </p.PlasmicLink>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                        {
-                          <p.PlasmicLink
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link___3BnPg
-                            )}
-                            component={Link}
-                            href={`/`}
-                            platform={"nextjs"}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? ""
-                              : "education"}
-                          </p.PlasmicLink>
-                        }
-                        <React.Fragment>{""}</React.Fragment>
-                      </React.Fragment>
-                    ) : (
-                      <React.Fragment>
-                        <React.Fragment>{"We want to build "}</React.Fragment>
-                        {
-                          <p.PlasmicLink
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__rhqii
-                            )}
-                            component={Link}
-                            href={`/`}
-                            platform={"nextjs"}
-                          >
-                            {"integrations"}
-                          </p.PlasmicLink>
-                        }
-                        <React.Fragment>{" through\n"}</React.Fragment>
-                        {
-                          <p.PlasmicLink
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__sIxqc
-                            )}
-                            component={Link}
-                            href={`/`}
-                            platform={"nextjs"}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? ""
-                              : " mentoring"}
-                          </p.PlasmicLink>
-                        }
-                        <React.Fragment>{" and "}</React.Fragment>
-                        {
-                          <p.PlasmicLink
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link___3BnPg
-                            )}
-                            component={Link}
-                            href={`/`}
-                            platform={"nextjs"}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? ""
-                              : "education"}
-                          </p.PlasmicLink>
-                        }
-                        <React.Fragment>{"."}</React.Fragment>
-                      </React.Fragment>
-                    )}
-                  </div>
-                </Reveal>
-              </p.Stack>
-            </div>
-          ) : null}
+                  {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                    <React.Fragment>
+                      <React.Fragment>{"We want to build "}</React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__pm9Xk
+                          )}
+                          component={Link}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "integrations"
+                            : "integrations"}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{" \nthrough"}</React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__rqc7B
+                          )}
+                          component={Link}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? " mentoring"
+                            : " mentoring"}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{" \nand \n"}</React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__n57Xe
+                          )}
+                          component={Link}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "education"
+                            : "education"}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{"."}</React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__sIxqc
+                          )}
+                          component={Link}
+                          href={`/`}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? ""
+                            : " mentoring"}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link___3BnPg
+                          )}
+                          component={Link}
+                          href={`/`}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? ""
+                            : "education"}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{""}</React.Fragment>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <React.Fragment>{"We want to build "}</React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__rhqii
+                          )}
+                          component={Link}
+                          href={`/`}
+                          platform={"nextjs"}
+                        >
+                          {"integrations"}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{" through\n"}</React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__sIxqc
+                          )}
+                          component={Link}
+                          href={`/`}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? ""
+                            : " mentoring"}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{" and "}</React.Fragment>
+                      {
+                        <PlasmicLink__
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link___3BnPg
+                          )}
+                          component={Link}
+                          href={`/`}
+                          platform={"nextjs"}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? ""
+                            : "education"}
+                        </PlasmicLink__>
+                      }
+                      <React.Fragment>{"."}</React.Fragment>
+                    </React.Fragment>
+                  )}
+                </div>
+              </Reveal>
+            </Stack__>
+          </div>
           <Footer
             data-plasmic-name={"footer"}
             data-plasmic-override={overrides.footer}
@@ -453,7 +465,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicHomepage__ArgProps,
           internalVariantPropNames: PlasmicHomepage__VariantProps
         }),

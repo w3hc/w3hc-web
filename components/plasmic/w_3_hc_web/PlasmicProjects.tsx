@@ -17,25 +17,48 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
+
 import Header from "../../Header"; // plasmic-import: 8weNktnDWmJHK/component
 import Footer from "../../Footer"; // plasmic-import: VnNBHcpuRiqHc/component
 
@@ -56,27 +79,25 @@ type ArgPropType = keyof PlasmicProjects__ArgsType;
 export const PlasmicProjects__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicProjects__OverridesType = {
-  root?: p.Flex<"div">;
-  header?: p.Flex<typeof Header>;
-  block4?: p.Flex<"div">;
-  block5?: p.Flex<"div">;
-  block6?: p.Flex<"div">;
-  block?: p.Flex<"div">;
-  block2?: p.Flex<"div">;
-  block8?: p.Flex<"div">;
-  block3?: p.Flex<"div">;
-  footer?: p.Flex<typeof Footer>;
+  root?: Flex__<"div">;
+  header?: Flex__<typeof Header>;
+  block4?: Flex__<"div">;
+  block5?: Flex__<"div">;
+  block6?: Flex__<"div">;
+  block?: Flex__<"div">;
+  block2?: Flex__<"div">;
+  block8?: Flex__<"div">;
+  block3?: Flex__<"div">;
+  block7?: Flex__<"div">;
+  block9?: Flex__<"div">;
+  block10?: Flex__<"div">;
+  block11?: Flex__<"div">;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultProjectsProps {}
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -92,21 +113,18 @@ function PlasmicProjects__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-
-  const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <React.Fragment>
@@ -201,7 +219,7 @@ function PlasmicProjects__RenderFunc(props: {
                     }
                   </React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
@@ -210,16 +228,16 @@ function PlasmicProjects__RenderFunc(props: {
                         sty.link__vdTrM
                       )}
                       component={Link}
-                      href={"https://discord.com/invite/uSxzJp3J76" as const}
+                      href={"https://discord.com/invite/uSxzJp3J76"}
                       platform={"nextjs"}
-                      target={"_blank" as const}
+                      target={"_blank"}
                     >
                       {"join us in Discord"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>{" or "}</React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
@@ -228,16 +246,16 @@ function PlasmicProjects__RenderFunc(props: {
                         sty.link__vhN0E
                       )}
                       component={Link}
-                      href={"https://t.me/+5ih-ivs0VVM0NWU0" as const}
+                      href={"https://t.me/+5ih-ivs0VVM0NWU0"}
                       platform={"nextjs"}
-                      target={"_blank" as const}
+                      target={"_blank"}
                     >
                       {"Telegram"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>{", "}</React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
@@ -246,11 +264,11 @@ function PlasmicProjects__RenderFunc(props: {
                         sty.link__gdqgb
                       )}
                       component={Link}
-                      href={"https://forms.gle/MYAfygPm5GD95HQ19" as const}
+                      href={"https://forms.gle/MYAfygPm5GD95HQ19"}
                       platform={"nextjs"}
                     >
                       {"apply to become a member of the DAO"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>
                     {
@@ -258,7 +276,7 @@ function PlasmicProjects__RenderFunc(props: {
                     }
                   </React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
@@ -267,134 +285,126 @@ function PlasmicProjects__RenderFunc(props: {
                         sty.link__rtDBg
                       )}
                       component={Link}
-                      href={"https://github.com/w3hc" as const}
+                      href={"https://github.com/w3hc"}
                       platform={"nextjs"}
                     >
                       {"contribute directly via Github"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>{"."}</React.Fragment>
                 </React.Fragment>
               </div>
-              {true ? (
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__rd4Fe
+                )}
+              >
+                {"Integrations"}
+              </div>
+              <div
+                data-plasmic-name={"block4"}
+                data-plasmic-override={overrides.block4}
+                className={classNames(projectcss.all, sty.block4)}
+              >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__rd4Fe
+                    sty.text__kWyHr
                   )}
                 >
-                  {"Integrations"}
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__iNjKc
+                        )}
+                        component={Link}
+                        href={`/soon`}
+                        platform={"nextjs"}
+                      >
+                        {"Medusa <> Gov"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
                 </div>
-              ) : null}
-              {true ? (
+              </div>
+              <div
+                data-plasmic-name={"block5"}
+                data-plasmic-override={overrides.block5}
+                className={classNames(projectcss.all, sty.block5)}
+              >
                 <div
-                  data-plasmic-name={"block4"}
-                  data-plasmic-override={overrides.block4}
-                  className={classNames(projectcss.all, sty.block4)}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___912C4
+                  )}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__kWyHr
-                    )}
-                  >
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <p.PlasmicLink
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
-                            sty.link__iNjKc
-                          )}
-                          component={Link}
-                          href={`/soon`}
-                          platform={"nextjs"}
-                        >
-                          {"Medusa <> Gov"}
-                        </p.PlasmicLink>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  </div>
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link___2U90Z
+                        )}
+                        component={Link}
+                        href={`/soon`}
+                        platform={"nextjs"}
+                      >
+                        {"Lens <> Celo"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
                 </div>
-              ) : null}
-              {true ? (
+              </div>
+              <div
+                data-plasmic-name={"block6"}
+                data-plasmic-override={overrides.block6}
+                className={classNames(projectcss.all, sty.block6)}
+              >
                 <div
-                  data-plasmic-name={"block5"}
-                  data-plasmic-override={overrides.block5}
-                  className={classNames(projectcss.all, sty.block5)}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___1Xk72
+                  )}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___912C4
-                    )}
-                  >
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <p.PlasmicLink
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
-                            sty.link___2U90Z
-                          )}
-                          component={Link}
-                          href={`/soon`}
-                          platform={"nextjs"}
-                        >
-                          {"Lens <> Celo"}
-                        </p.PlasmicLink>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  </div>
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link___3YrLu
+                        )}
+                        component={Link}
+                        href={`/soon`}
+                        platform={"nextjs"}
+                      >
+                        {"Superfluid <> FEVM"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
                 </div>
-              ) : null}
-              {true ? (
-                <div
-                  data-plasmic-name={"block6"}
-                  data-plasmic-override={overrides.block6}
-                  className={classNames(projectcss.all, sty.block6)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___1Xk72
-                    )}
-                  >
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <p.PlasmicLink
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.a,
-                            projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
-                            sty.link___3YrLu
-                          )}
-                          component={Link}
-                          href={`/soon`}
-                          platform={"nextjs"}
-                        >
-                          {"Superfluid <> FEVM"}
-                        </p.PlasmicLink>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  </div>
-                </div>
-              ) : null}
+              </div>
               <div
                 className={classNames(
                   projectcss.all,
@@ -419,7 +429,7 @@ function PlasmicProjects__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -428,12 +438,12 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link__ythbV
                         )}
                         component={Link}
-                        href={"https://github.com/w3hc/gov" as const}
+                        href={"https://github.com/w3hc/gov"}
                         platform={"nextjs"}
-                        target={"_blank" as const}
+                        target={"_blank"}
                       >
                         {"Gov"}
-                      </p.PlasmicLink>
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
@@ -459,7 +469,7 @@ function PlasmicProjects__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -468,16 +478,16 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link__ushDq
                         )}
                         component={Link}
-                        href={"https://github.com/w3hc/gov" as const}
+                        href={"https://github.com/w3hc/gov"}
                         platform={"nextjs"}
-                        target={"_blank" as const}
+                        target={"_blank"}
                       >
                         {"Github repo"}
-                      </p.PlasmicLink>
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{" | "}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -486,32 +496,71 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link__qIbvb
                         )}
                         component={Link}
-                        href={
-                          "https://github.com/orgs/w3hc/projects/8/views/6" as const
-                        }
+                        href={"https://github.com/orgs/w3hc/projects/8/views/6"}
                         platform={"nextjs"}
-                        target={"_blank" as const}
+                        target={"_blank"}
                       >
                         {"Task board"}
-                      </p.PlasmicLink>
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{" | "}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
                           projectcss.__wab_text,
                           projectcss.plasmic_default__inline,
-                          sty.link__ti2Al
+                          sty.link__rJu5Z
                         )}
                         component={Link}
-                        href={"https://w3hc.github.io/gov-docs/" as const}
+                        href={"https://w3hc.github.io/gov-docs/"}
                         platform={"nextjs"}
-                        target={"_blank" as const}
                       >
-                        {"Docs"}
-                      </p.PlasmicLink>
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "var(--token-zqwdlV4ZdEYm_k)" }}
+                          >
+                            {"Docs"}
+                          </span>
+                        </React.Fragment>
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "var(--token-u_cGwS23As82q0)" }}
+                    >
+                      {" | "}
+                    </span>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link___8UXMj
+                        )}
+                        component={Link}
+                        href={"https://gov-ui.netlify.app/"}
+                        platform={"nextjs"}
+                      >
+                        <React.Fragment>
+                          <span
+                            className={
+                              "plasmic_default__all plasmic_default__span"
+                            }
+                            style={{ color: "var(--token-zqwdlV4ZdEYm_k)" }}
+                          >
+                            {"Live demo"}
+                          </span>
+                        </React.Fragment>
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
@@ -532,7 +581,7 @@ function PlasmicProjects__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -541,12 +590,12 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link__sLgJt
                         )}
                         component={Link}
-                        href={"https://github.com/w3hc/gcfa-contracts" as const}
+                        href={"https://github.com/w3hc/gcfa-contracts"}
                         platform={"nextjs"}
-                        target={"_blank" as const}
+                        target={"_blank"}
                       >
-                        {"Good CFA"}
-                      </p.PlasmicLink>
+                        {"Pattini"}
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
@@ -559,7 +608,7 @@ function PlasmicProjects__RenderFunc(props: {
                   )}
                 >
                   {
-                    "gCFA is the one and only crypto version of the CFA Franc (XAF and XOF), a currency used in 16 countries in Africa. "
+                    "Pattini is a GitHub Action designed to incentivize and reward contributors of a GitHub project. When an issue is merged by a maintainer, the pull request author automatically receives a certain amount of ERC-20 (USDC, DAI, ...)."
                   }
                 </div>
                 <div
@@ -572,7 +621,7 @@ function PlasmicProjects__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -581,16 +630,16 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link__f0KkU
                         )}
                         component={Link}
-                        href={"https://github.com/w3hc/gcfa-contracts" as const}
+                        href={"https://github.com/w3hc/pattini"}
                         platform={"nextjs"}
-                        target={"_blank" as const}
+                        target={"_blank"}
                       >
                         {"Github repo"}
-                      </p.PlasmicLink>
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{" | "}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -599,14 +648,12 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link__sjpWl
                         )}
                         component={Link}
-                        href={
-                          "https://github.com/orgs/w3hc/projects/5/views/5" as const
-                        }
+                        href={"https://github.com/orgs/w3hc/projects/17"}
                         platform={"nextjs"}
-                        target={"_blank" as const}
+                        target={"_blank"}
                       >
                         {"Task board"}
-                      </p.PlasmicLink>
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
@@ -627,7 +674,7 @@ function PlasmicProjects__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -639,8 +686,8 @@ function PlasmicProjects__RenderFunc(props: {
                         href={`/projects`}
                         platform={"nextjs"}
                       >
-                        {"Disk On-chain"}
-                      </p.PlasmicLink>
+                        {"Web3 DD"}
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
@@ -653,7 +700,7 @@ function PlasmicProjects__RenderFunc(props: {
                   )}
                 >
                   {
-                    "A decentralized storage solution that provides on-chain data management and access control."
+                    "A classic file explorer to manage your files and directories in a safe and decentralized fashion."
                   }
                 </div>
                 <div
@@ -666,7 +713,7 @@ function PlasmicProjects__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -675,15 +722,15 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link__uBkmf
                         )}
                         component={Link}
-                        href={`/projects`}
+                        href={"https://github.com/w3hc/web3dd"}
                         platform={"nextjs"}
                       >
                         {"Github repo"}
-                      </p.PlasmicLink>
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{" | "}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -696,23 +743,21 @@ function PlasmicProjects__RenderFunc(props: {
                         platform={"nextjs"}
                       >
                         {"Task board"}
-                      </p.PlasmicLink>
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
                 </div>
               </div>
-              {true ? (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__f5JW2
-                  )}
-                >
-                  {"Hackathons"}
-                </div>
-              ) : null}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__f5JW2
+                )}
+              >
+                {"Hackathons"}
+              </div>
               <div
                 className={classNames(
                   projectcss.all,
@@ -737,7 +782,7 @@ function PlasmicProjects__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -746,14 +791,12 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link___9Pu8C
                         )}
                         component={Link}
-                        href={
-                          "https://github.com/w3hc/uniswap-v3-deploy" as const
-                        }
+                        href={"https://github.com/w3hc/uniswap-v3-deploy"}
                         platform={"nextjs"}
-                        target={"_blank" as const}
+                        target={"_blank"}
                       >
                         {"Uniswap V3 Deploy"}
-                      </p.PlasmicLink>
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
@@ -779,7 +822,7 @@ function PlasmicProjects__RenderFunc(props: {
                   <React.Fragment>
                     <React.Fragment>{""}</React.Fragment>
                     {
-                      <p.PlasmicLink
+                      <PlasmicLink__
                         className={classNames(
                           projectcss.all,
                           projectcss.a,
@@ -788,14 +831,373 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link__oBecx
                         )}
                         component={Link}
-                        href={
-                          "https://github.com/w3hc/uniswap-v3-deploy" as const
-                        }
+                        href={"https://github.com/w3hc/uniswap-v3-deploy"}
                         platform={"nextjs"}
-                        target={"_blank" as const}
+                        target={"_blank"}
                       >
                         {"Github repo"}
-                      </p.PlasmicLink>
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"block7"}
+                data-plasmic-override={overrides.block7}
+                className={classNames(projectcss.all, sty.block7)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__amXpU
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__e9NDh
+                        )}
+                        component={Link}
+                        href={"https://github.com/w3hc/uniswap-v3-deploy"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"Portable Profile"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__gHu0T
+                  )}
+                >
+                  {
+                    "This package includes a CLI script for deploying the latest Uniswap V3 smart contracts to any EVM (Ethereum Virtual Machine) compatible network."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__v6Pr
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__gs2Y4
+                        )}
+                        component={Link}
+                        href={"https://portableprofile.app/"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"Project description"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__uehlp
+                )}
+              >
+                {"Templates"}
+              </div>
+              <div
+                data-plasmic-name={"block9"}
+                data-plasmic-override={overrides.block9}
+                className={classNames(projectcss.all, sty.block9)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___46B6J
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__ysnIv
+                        )}
+                        component={Link}
+                        href={"https://github.com/w3hc/gcfa-contracts"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"Hardhat Template"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kKgLu
+                  )}
+                >
+                  {
+                    "A Hardhat template that includes Typescript, Ethers v6, OpenZeppelin Contracts v5.0.1, Hardhat Verify plugin, and Hardhat Deploy plugin"
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__i7NFa
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__dYgry
+                        )}
+                        component={Link}
+                        href={"https://github.com/w3hc/w3hc-hardhat-template"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"Github repo"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment> </React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link___5THy
+                        )}
+                        component={Link}
+                        href={"https://github.com/orgs/w3hc/projects/17"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"                             "}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"block10"}
+                data-plasmic-override={overrides.block10}
+                className={classNames(projectcss.all, sty.block10)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qUfB
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link___44JzU
+                        )}
+                        component={Link}
+                        href={"https://github.com/w3hc/gcfa-contracts"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"Genji - Next.js template"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___3EYjo
+                  )}
+                >
+                  {
+                    "A Next.js Web3 app template that includes Web3 Modal, email login, Ethers.js (v6), and Chakra UI."
+                  }
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__o4T45
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__n1N5H
+                        )}
+                        component={Link}
+                        href={"https://github.com/w3hc/genji"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"Github repo"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment> </React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__d4VaJ
+                        )}
+                        component={Link}
+                        href={"https://github.com/orgs/w3hc/projects/17"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"                             "}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              </div>
+              <div
+                data-plasmic-name={"block11"}
+                data-plasmic-override={overrides.block11}
+                className={classNames(projectcss.all, sty.block11)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__q7CJ6
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__ugx2
+                        )}
+                        component={Link}
+                        href={"https://github.com/w3hc/gcfa-contracts"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"Nest.js API Template"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__dhAye
+                  )}
+                >
+                  {"Nestjs-based API that uses PostgreSQL and Ethersjs."}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__fgkz
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__cgV2H
+                        )}
+                        component={Link}
+                        href={"https://github.com/w3hc/web3-nestjs"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"Github repo"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>{"  "}</React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__batW
+                        )}
+                        component={Link}
+                        href={"https://github.com/orgs/w3hc/projects/17"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {"              "}
+                      </PlasmicLink__>
                     }
                     <React.Fragment>{""}</React.Fragment>
                   </React.Fragment>
@@ -825,6 +1227,10 @@ const PlasmicDescendants = {
     "block2",
     "block8",
     "block3",
+    "block7",
+    "block9",
+    "block10",
+    "block11",
     "footer"
   ],
   header: ["header"],
@@ -835,6 +1241,10 @@ const PlasmicDescendants = {
   block2: ["block2"],
   block8: ["block8"],
   block3: ["block3"],
+  block7: ["block7"],
+  block9: ["block9"],
+  block10: ["block10"],
+  block11: ["block11"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -850,6 +1260,10 @@ type NodeDefaultElementType = {
   block2: "div";
   block8: "div";
   block3: "div";
+  block7: "div";
+  block9: "div";
+  block10: "div";
+  block11: "div";
   footer: typeof Footer;
 };
 
@@ -887,7 +1301,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicProjects__ArgProps,
           internalVariantPropNames: PlasmicProjects__VariantProps
         }),
@@ -921,6 +1335,10 @@ export const PlasmicProjects = Object.assign(
     block2: makeNodeComponent("block2"),
     block8: makeNodeComponent("block8"),
     block3: makeNodeComponent("block3"),
+    block7: makeNodeComponent("block7"),
+    block9: makeNodeComponent("block9"),
+    block10: makeNodeComponent("block10"),
+    block11: makeNodeComponent("block11"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicProjects

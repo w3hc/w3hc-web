@@ -17,25 +17,48 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
+
 import Header from "../../Header"; // plasmic-import: 8weNktnDWmJHK/component
 import Button from "../../Button"; // plasmic-import: 3c-nMnpAWfnFh/component
 import Footer from "../../Footer"; // plasmic-import: VnNBHcpuRiqHc/component
@@ -60,23 +83,17 @@ type ArgPropType = keyof PlasmicGov__ArgsType;
 export const PlasmicGov__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicGov__OverridesType = {
-  root?: p.Flex<"div">;
-  header?: p.Flex<typeof Header>;
-  h1?: p.Flex<"h1">;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
-  button?: p.Flex<typeof Button>;
-  footer?: p.Flex<typeof Footer>;
+  root?: Flex__<"div">;
+  header?: Flex__<typeof Header>;
+  h1?: Flex__<"h1">;
+  link?: Flex__<"a"> & Partial<LinkProps>;
+  button?: Flex__<typeof Button>;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultGovProps {}
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -92,21 +109,18 @@ function PlasmicGov__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-
-  const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <React.Fragment>
@@ -193,7 +207,7 @@ function PlasmicGov__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       data-plasmic-name={"link"}
                       data-plasmic-override={overrides.link}
                       className={classNames(
@@ -204,12 +218,12 @@ function PlasmicGov__RenderFunc(props: {
                         sty.link
                       )}
                       component={Link}
-                      href={"https://github.com/w3hc/gov" as const}
+                      href={"https://github.com/w3hc/gov"}
                       platform={"nextjs"}
-                      target={"_blank" as const}
+                      target={"_blank"}
                     >
                       {"Gov"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>
                     {" is a DAO framework built for everyday people"}
@@ -221,7 +235,7 @@ function PlasmicGov__RenderFunc(props: {
                   data-plasmic-name={"button"}
                   data-plasmic-override={overrides.button}
                   className={classNames("__wab_instance", sty.button)}
-                  link={"https://form.jotform.com/230527850256052" as const}
+                  link={"https://form.jotform.com/230527850256052"}
                   submitsForm={true}
                 >
                   <div
@@ -246,16 +260,16 @@ function PlasmicGov__RenderFunc(props: {
                   "Gov is a DAO framework built with Open Zeppelin\u2019s Governor contract in combination with NFTs. It provides a coordination tool that fits the needs of everyday people.\n\nWe\u2019re inviting orgs, federations of orgs, activists, neighborhoods, stewards of the commons, collectives, and all communities to create their own DAO. The Web3 Hackers Collective has recently released the beta version of Gov. We want to run five different pilots and focus exclusively on the impact evaluation process of each DAO.\n\nGov can be viewed as a retroactive funding tool: people can use it to fund on-the-ground actions that has already been delivered (as opposed to funding actions planned in the future).\n\nGov is fully compatible with Tally (they have the best existing UI in town!)\n\nWe\u2019re currently supporting Optimism Mainnet, Ethereum Goerli Testnet, Optimism Goerli Testnet, and Arbitrum Goerli Testnet.\n\nAlso, we have successfully tested Medusa (Arbitrum Goerli Testnet only for now). This allows anyone to share a document that can only be decrypted by the members of a given DAO."
                 }
               </div>
-              <p.PlasmicImg
+              <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__vozN5)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
-                loading={"lazy" as const}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
                 src={{
                   src: "/plasmic/w_3_hc_web/images/contractsExplainedpng.png",
                   fullWidth: 3140,
@@ -264,16 +278,16 @@ function PlasmicGov__RenderFunc(props: {
                 }}
               />
 
-              <p.PlasmicImg
+              <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__nuTos)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
-                loading={"lazy" as const}
+                displayHeight={"auto"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
+                loading={"lazy"}
                 src={{
                   src: "/plasmic/w_3_hc_web/images/carbon10Png.png",
                   fullWidth: 1870,
@@ -348,7 +362,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicGov__ArgProps,
           internalVariantPropNames: PlasmicGov__VariantProps
         }),
