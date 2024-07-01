@@ -86,8 +86,9 @@ export type PlasmicGov__OverridesType = {
   root?: Flex__<"div">;
   header?: Flex__<typeof Header>;
   h1?: Flex__<"h1">;
-  link?: Flex__<"a"> & Partial<LinkProps>;
+  h2?: Flex__<"h2">;
   button?: Flex__<typeof Button>;
+  img?: Flex__<typeof PlasmicImg__>;
   footer?: Flex__<typeof Footer>;
 };
 
@@ -208,14 +209,12 @@ function PlasmicGov__RenderFunc(props: {
                   <React.Fragment>{""}</React.Fragment>
                   {
                     <PlasmicLink__
-                      data-plasmic-name={"link"}
-                      data-plasmic-override={overrides.link}
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
                         projectcss.__wab_text,
                         projectcss.plasmic_default__inline,
-                        sty.link
+                        sty.link__lSUjQ
                       )}
                       component={Link}
                       href={"https://github.com/w3hc/gov"}
@@ -225,18 +224,70 @@ function PlasmicGov__RenderFunc(props: {
                       {"Gov"}
                     </PlasmicLink__>
                   }
-                  <React.Fragment>
-                    {" is a DAO framework built for everyday people"}
-                  </React.Fragment>
+                  <React.Fragment> </React.Fragment>
                 </React.Fragment>
               </h1>
+              <h2
+                data-plasmic-name={"h2"}
+                data-plasmic-override={overrides.h2}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h2,
+                  projectcss.__wab_text,
+                  sty.h2
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-u_cGwS23As82q0)" }}
+                  >
+                    {""}
+                  </span>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__bZnGo
+                      )}
+                      component={Link}
+                      href={"https://github.com/w3hc/gov"}
+                      platform={"nextjs"}
+                      target={"_blank"}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "var(--token-u_cGwS23As82q0)" }}
+                        >
+                          {"DAOs for everyday people"}
+                        </span>
+                      </React.Fragment>
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "var(--token-u_cGwS23As82q0)" }}
+                  >
+                    {" "}
+                  </span>
+                </React.Fragment>
+              </h2>
               <div className={classNames(projectcss.all, sty.freeBox__t96W)}>
                 <Button
                   data-plasmic-name={"button"}
                   data-plasmic-override={overrides.button}
                   className={classNames("__wab_instance", sty.button)}
-                  link={"https://form.jotform.com/230527850256052"}
+                  link={"https://gov-ui.netlify.app/"}
                   submitsForm={true}
+                  target={true}
                 >
                   <div
                     className={classNames(
@@ -245,7 +296,7 @@ function PlasmicGov__RenderFunc(props: {
                       sty.text__rcnIs
                     )}
                   >
-                    {"Create your DAO"}
+                    {"Live demo"}
                   </div>
                 </Button>
               </div>
@@ -257,12 +308,14 @@ function PlasmicGov__RenderFunc(props: {
                 )}
               >
                 {
-                  "Gov is a DAO framework built with Open Zeppelin\u2019s Governor contract in combination with NFTs. It provides a coordination tool that fits the needs of everyday people.\n\nWe\u2019re inviting orgs, federations of orgs, activists, neighborhoods, stewards of the commons, collectives, and all communities to create their own DAO. The Web3 Hackers Collective has recently released the beta version of Gov. We want to run five different pilots and focus exclusively on the impact evaluation process of each DAO.\n\nGov can be viewed as a retroactive funding tool: people can use it to fund on-the-ground actions that has already been delivered (as opposed to funding actions planned in the future).\n\nGov is fully compatible with Tally (they have the best existing UI in town!)\n\nWe\u2019re currently supporting Optimism Mainnet, Ethereum Goerli Testnet, Optimism Goerli Testnet, and Arbitrum Goerli Testnet.\n\nAlso, we have successfully tested Medusa (Arbitrum Goerli Testnet only for now). This allows anyone to share a document that can only be decrypted by the members of a given DAO."
+                  "Gov is a DAO framework built with Open Zeppelin\u2019s Governor contract in combination with NFTs. It provides a coordination tool that fits the needs of everyday people.\n\nWe\u2019re inviting orgs, federations of orgs, activists, neighborhoods, stewards of the commons, collectives, and all communities to create their own DAO. The Web3 Hackers Collective has recently released the v0.10.0 of Gov. We want to run a series of pilots and focus on the impact evaluation process of each DAO."
                 }
               </div>
               <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img__vozN5)}
+                className={classNames(sty.img)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -278,23 +331,151 @@ function PlasmicGov__RenderFunc(props: {
                 }}
               />
 
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__nuTos)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/w_3_hc_web/images/carbon10Png.png",
-                  fullWidth: 1870,
-                  fullHeight: 4946,
-                  aspectRatio: undefined
-                }}
-              />
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ozjyY
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link___630Vi
+                      )}
+                      component={Link}
+                      href={"https://github.com/w3hc/gov"}
+                      platform={"nextjs"}
+                      target={"_blank"}
+                    >
+                      {"GitHub repo (contracts)"}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__oDt41
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__yqkq9
+                      )}
+                      component={Link}
+                      href={"https://github.com/w3hc/gov-ui"}
+                      platform={"nextjs"}
+                      target={"_blank"}
+                    >
+                      {"Gov UI GitHub repo"}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__udFp
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__ynmxc
+                      )}
+                      component={Link}
+                      href={"https://github.com/w3hc/gov-deployer"}
+                      platform={"nextjs"}
+                      target={"_blank"}
+                    >
+                      {"Gov Deployer"}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__c9Ha8
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__itrQ4
+                      )}
+                      component={Link}
+                      href={"https://w3hc.github.io/gov-docs/"}
+                      platform={"nextjs"}
+                      target={"_blank"}
+                    >
+                      {"Documentation"}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dLmhx
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <PlasmicLink__
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.link__odYMf
+                      )}
+                      component={Link}
+                      href={"https://www.tally.xyz/gov/web3-hackers-collective"}
+                      platform={"nextjs"}
+                      target={"_blank"}
+                    >
+                      {"Example of a DAO on Tally "}
+                    </PlasmicLink__>
+                  }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
             </div>
           </div>
           <Footer
@@ -309,11 +490,12 @@ function PlasmicGov__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "h1", "link", "button", "footer"],
+  root: ["root", "header", "h1", "h2", "button", "img", "footer"],
   header: ["header"],
-  h1: ["h1", "link"],
-  link: ["link"],
+  h1: ["h1"],
+  h2: ["h2"],
   button: ["button"],
+  img: ["img"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -323,8 +505,9 @@ type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
   h1: "h1";
-  link: "a";
+  h2: "h2";
   button: typeof Button;
+  img: typeof PlasmicImg__;
   footer: typeof Footer;
 };
 
@@ -390,8 +573,9 @@ export const PlasmicGov = Object.assign(
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
     h1: makeNodeComponent("h1"),
-    link: makeNodeComponent("link"),
+    h2: makeNodeComponent("h2"),
     button: makeNodeComponent("button"),
+    img: makeNodeComponent("img"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicGov

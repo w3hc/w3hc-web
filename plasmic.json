@@ -41,7 +41,8 @@
         }
       ],
       "splitsProviderFilePath": "",
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "rURT7PSYpAQNuaCGHJDPZg",
