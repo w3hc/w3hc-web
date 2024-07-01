@@ -3,7 +3,6 @@
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
 
-import { ScreenVariantProvider } from "../components/plasmic/w_3_hc_web/PlasmicGlobalVariant__Screen";
 import { PlasmicProjectsStaging } from "../components/plasmic/w_3_hc_web/PlasmicProjectsStaging";
 import { useRouter } from "next/router";
 

@@ -2,14 +2,14 @@
   "projects": [
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
-      "version": "3.8.0",
+      "version": "3.25.0",
       "dependencies": {},
       "lang": "ts",
       "fileLocks": [
         {
           "assetId": "58GpZjZCWTaJ8AUhpCwt2K",
           "type": "projectCss",
-          "checksum": "dbf25c878cd885da8866557c058b53ff"
+          "checksum": "fd84921cc10936e6ceb458c2ae01c4bd"
         }
       ],
       "codegenVersion": "0.0.1"
