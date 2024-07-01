@@ -63,9 +63,6 @@
 .img > picture > img {
   object-fit: cover;
 }
-.img > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .freeBox__r6Hua {
   display: flex;
   position: relative;
@@ -136,7 +133,7 @@
 .svg__uHdT {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .text {
@@ -145,6 +142,6 @@
 .svg__t8AV {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }

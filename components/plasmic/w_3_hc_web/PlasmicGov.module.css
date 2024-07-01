@@ -85,7 +85,7 @@
 .svg__uExtH {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .text__rcnIs {
@@ -94,7 +94,7 @@
 .svg__bykZt {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .text__qubCd {
@@ -121,9 +121,6 @@
 .img__vozN5 > picture > img {
   object-fit: cover;
 }
-.img__vozN5 > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .img__nuTos {
   position: relative;
   object-fit: cover;
@@ -131,9 +128,6 @@
   margin-top: 73px;
 }
 .img__nuTos > picture > img {
-  object-fit: cover;
-}
-.img__nuTos > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .footer:global(.__wab_instance) {

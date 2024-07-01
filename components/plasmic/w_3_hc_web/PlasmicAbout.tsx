@@ -17,25 +17,48 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
+
 import Header from "../../Header"; // plasmic-import: 8weNktnDWmJHK/component
 import Footer from "../../Footer"; // plasmic-import: VnNBHcpuRiqHc/component
 
@@ -58,20 +81,14 @@ type ArgPropType = keyof PlasmicAbout__ArgsType;
 export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicAbout__OverridesType = {
-  root?: p.Flex<"div">;
-  header?: p.Flex<typeof Header>;
-  footer?: p.Flex<typeof Footer>;
+  root?: Flex__<"div">;
+  header?: Flex__<typeof Header>;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultAboutProps {}
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -87,21 +104,18 @@ function PlasmicAbout__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-
-  const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantshCgzN1EtzMdy()
@@ -334,7 +348,7 @@ function PlasmicAbout__RenderFunc(props: {
                                 {"Develop and maintain "}
                               </React.Fragment>
                               {
-                                <p.PlasmicLink
+                                <PlasmicLink__
                                   className={classNames(
                                     projectcss.all,
                                     projectcss.a,
@@ -343,14 +357,12 @@ function PlasmicAbout__RenderFunc(props: {
                                     sty.link__pmPK
                                   )}
                                   component={Link}
-                                  href={
-                                    "https://w3hc.github.io/gov-docs/" as const
-                                  }
+                                  href={"https://w3hc.github.io/gov-docs/"}
                                   platform={"nextjs"}
-                                  target={"_blank" as const}
+                                  target={"_blank"}
                                 >
                                   {"Gov"}
-                                </p.PlasmicLink>
+                                </PlasmicLink__>
                               }
                               <React.Fragment>
                                 {
@@ -388,7 +400,7 @@ function PlasmicAbout__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
@@ -397,14 +409,12 @@ function PlasmicAbout__RenderFunc(props: {
                         sty.link__c4ZfR
                       )}
                       component={Link}
-                      href={
-                        "https://www.tally.xyz/gov/web3-hackers-collective" as const
-                      }
+                      href={"https://www.tally.xyz/gov/web3-hackers-collective"}
                       platform={"nextjs"}
-                      target={"_blank" as const}
+                      target={"_blank"}
                     >
                       {"View the DAO on Tally"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
@@ -419,7 +429,7 @@ function PlasmicAbout__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
@@ -428,14 +438,12 @@ function PlasmicAbout__RenderFunc(props: {
                         sty.link__jIlQk
                       )}
                       component={Link}
-                      href={
-                        "https://github.com/orgs/w3hc/projects/8/views/6" as const
-                      }
+                      href={"https://github.com/orgs/w3hc/projects/8/views/6"}
                       platform={"nextjs"}
-                      target={"_blank" as const}
+                      target={"_blank"}
                     >
                       {"Contribute on Gov"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
@@ -450,7 +458,7 @@ function PlasmicAbout__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
@@ -459,12 +467,12 @@ function PlasmicAbout__RenderFunc(props: {
                         sty.link__ses4C
                       )}
                       component={Link}
-                      href={"https://forms.gle/MYAfygPm5GD95HQ19" as const}
+                      href={"https://forms.gle/MYAfygPm5GD95HQ19"}
                       platform={"nextjs"}
-                      target={"_blank" as const}
+                      target={"_blank"}
                     >
                       {"Join the WH3C"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
@@ -479,7 +487,7 @@ function PlasmicAbout__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
@@ -488,12 +496,12 @@ function PlasmicAbout__RenderFunc(props: {
                         sty.link__p3Dtw
                       )}
                       component={Link}
-                      href={"https://discord.com/invite/uSxzJp3J76" as const}
+                      href={"https://discord.com/invite/uSxzJp3J76"}
                       platform={"nextjs"}
-                      target={"_blank" as const}
+                      target={"_blank"}
                     >
                       {"Come say hi on Discord"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
@@ -508,7 +516,7 @@ function PlasmicAbout__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>{""}</React.Fragment>
                   {
-                    <p.PlasmicLink
+                    <PlasmicLink__
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
@@ -517,12 +525,12 @@ function PlasmicAbout__RenderFunc(props: {
                         sty.link___8CMpT
                       )}
                       component={Link}
-                      href={"https://www.youtube.com/@W3HC" as const}
+                      href={"https://www.youtube.com/@W3HC"}
                       platform={"nextjs"}
-                      target={"_blank" as const}
+                      target={"_blank"}
                     >
                       {"Watch us building"}
-                    </p.PlasmicLink>
+                    </PlasmicLink__>
                   }
                   <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
@@ -588,7 +596,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicAbout__ArgProps,
           internalVariantPropNames: PlasmicAbout__VariantProps
         }),
