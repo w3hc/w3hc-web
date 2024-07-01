@@ -17,27 +17,50 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
+
 import Header from "../../Header"; // plasmic-import: 8weNktnDWmJHK/component
-import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import Footer from "../../Footer"; // plasmic-import: VnNBHcpuRiqHc/component
 
 import { useScreenVariants as useScreenVariantshCgzN1EtzMdy } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: hCGZ-N1etzMDY/globalVariant
@@ -59,22 +82,16 @@ type ArgPropType = keyof PlasmicSoon__ArgsType;
 export const PlasmicSoon__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSoon__OverridesType = {
-  root?: p.Flex<"div">;
-  header?: p.Flex<typeof Header>;
-  text?: p.Flex<"div">;
-  ul?: p.Flex<"ul">;
-  footer?: p.Flex<typeof Footer>;
+  root?: Flex__<"div">;
+  header?: Flex__<typeof Header>;
+  text?: Flex__<"div">;
+  ul?: Flex__<"ul">;
+  footer?: Flex__<typeof Footer>;
 };
 
 export interface DefaultSoonProps {}
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -90,21 +107,18 @@ function PlasmicSoon__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
-
-  const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantshCgzN1EtzMdy()
@@ -184,7 +198,7 @@ function PlasmicSoon__RenderFunc(props: {
             <div className={classNames(projectcss.all, sty.freeBox__nCqub)}>
               <Reveal
                 className={classNames("__wab_instance", sty.reveal__d2EAq)}
-                duration={10000 as const}
+                duration={10000}
                 triggerOnce={true}
               >
                 <div
@@ -203,138 +217,134 @@ function PlasmicSoon__RenderFunc(props: {
             <Reveal
               cascade={false}
               className={classNames("__wab_instance", sty.reveal__rkHrK)}
-              delay={5000 as const}
-              direction={"left" as const}
-              duration={2000 as const}
-              effect={"zoom" as const}
+              delay={5000}
+              direction={"left"}
+              duration={2000}
+              effect={"zoom"}
               triggerOnce={false}
             >
-              {(
-                hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
-              ) ? (
-                <p.PlasmicLink
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__wy0Z1
-                  )}
-                  component={Link}
-                  href={"https://github.com/w3hc" as const}
-                  platform={"nextjs"}
-                  target={"_blank" as const}
-                >
-                  {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+              <PlasmicLink__
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__wy0Z1
+                )}
+                component={Link}
+                href={"https://github.com/w3hc"}
+                platform={"nextjs"}
+                target={"_blank"}
+              >
+                {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                  <React.Fragment>
                     <React.Fragment>
-                      <React.Fragment>
-                        {
-                          "The Web3 Hackers Collective is a DAO created on February 24, 2023. It is deployed to Optimism Mainnet. We're using "
-                        }
-                      </React.Fragment>
                       {
-                        <p.PlasmicLink
+                        "The Web3 Hackers Collective is a DAO created on February 24, 2023. It is deployed to Optimism Mainnet. We're using "
+                      }
+                    </React.Fragment>
+                    {
+                      <PlasmicLink__
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.a,
+                          projectcss.__wab_text,
+                          projectcss.plasmic_default__inline,
+                          sty.link__fpkwF
+                        )}
+                        component={Link}
+                        href={"https://github.com/w3hc/gov"}
+                        platform={"nextjs"}
+                        target={"_blank"}
+                      >
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Gov"
+                          : "Gov"}
+                      </PlasmicLink__>
+                    }
+                    <React.Fragment>
+                      {
+                        " which is an implementation of Open Zeppelin's Governor contract in combination with NFTs. \n\nOur mission statement is:\n\n "
+                      }
+                    </React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ fontWeight: 700 }}
+                    >
+                      {
+                        '"We want to build integrations through mentoring and learning."'
+                      }
+                    </span>
+                    <React.Fragment>
+                      {
+                        "\n\nAny proposal should meet one of the following criteria:\n\n"
+                      }
+                    </React.Fragment>
+                    {
+                      <ul
+                        data-plasmic-name={"ul"}
+                        data-plasmic-override={overrides.ul}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.ul,
+                          sty.ul
+                        )}
+                      >
+                        <li
                           className={classNames(
                             projectcss.all,
-                            projectcss.a,
+                            projectcss.li,
                             projectcss.__wab_text,
-                            projectcss.plasmic_default__inline,
-                            sty.link__fpkwF
+                            sty.li__xtUm4
                           )}
-                          component={Link}
-                          href={"https://github.com/w3hc/gov" as const}
-                          platform={"nextjs"}
-                          target={"_blank" as const}
                         >
                           {hasVariant(globalVariants, "screen", "mobileOnly")
-                            ? "Gov"
-                            : "Gov"}
-                        </p.PlasmicLink>
-                      }
-                      <React.Fragment>
-                        {
-                          " which is an implementation of Open Zeppelin's Governor contract in combination with NFTs. \n\nOur mission statement is:\n\n "
-                        }
-                      </React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {
-                          '"We want to build integrations through mentoring and learning."'
-                        }
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\n\nAny proposal should meet one of the following criteria:\n\n"
-                        }
-                      </React.Fragment>
-                      {
-                        <ul
-                          data-plasmic-name={"ul"}
-                          data-plasmic-override={overrides.ul}
+                            ? "Organize local hackathons, workshops and meetups"
+                            : "Organize local hackathons, workshops and meetups"}
+                        </li>
+                        <li
                           className={classNames(
                             projectcss.all,
-                            projectcss.ul,
-                            sty.ul
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__eqZeu
                           )}
                         >
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__xtUm4
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? "Organize local hackathons, workshops and meetups"
-                              : "Organize local hackathons, workshops and meetups"}
-                          </li>
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__eqZeu
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? "Request retroactive funding for a successful integration"
-                              : "Request retroactive funding for a successful integration"}
-                          </li>
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__gkNP
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? "Develop and maintain Gov: a DAO framework built with Governor and NFTs"
-                              : "Develop and maintain Gov: a DAO framework built with Governor and NFTs"}
-                          </li>
-                          <li
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.li,
-                              projectcss.__wab_text,
-                              sty.li__lMlwn
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? "Help people to setup their own DAO"
-                              : "Help people to setup their own DAO"}
-                          </li>
-                        </ul>
-                      }
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  ) : (
-                    "Have a look at the W3HC on Github"
-                  )}
-                </p.PlasmicLink>
-              ) : null}
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "Request retroactive funding for a successful integration"
+                            : "Request retroactive funding for a successful integration"}
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__gkNP
+                          )}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "Develop and maintain Gov: a DAO framework built with Governor and NFTs"
+                            : "Develop and maintain Gov: a DAO framework built with Governor and NFTs"}
+                        </li>
+                        <li
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.li,
+                            projectcss.__wab_text,
+                            sty.li__lMlwn
+                          )}
+                        >
+                          {hasVariant(globalVariants, "screen", "mobileOnly")
+                            ? "Help people to setup their own DAO"
+                            : "Help people to setup their own DAO"}
+                        </li>
+                      </ul>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                ) : (
+                  "Have a look at the W3HC on Github"
+                )}
+              </PlasmicLink__>
             </Reveal>
           </div>
           <Footer
@@ -400,7 +410,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicSoon__ArgProps,
           internalVariantPropNames: PlasmicSoon__VariantProps
         }),
