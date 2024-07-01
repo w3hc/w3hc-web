@@ -36,11 +36,12 @@
         {
           "id": "R6s1FdhksG",
           "name": "Reveal",
+          "displayName": "hostless-reveal",
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "jsBundleThemes": [],
-      "splitsProviderFilePath": ""
+      "splitsProviderFilePath": "",
+      "customFunctions": []
     },
     {
       "projectId": "rURT7PSYpAQNuaCGHJDPZg",
