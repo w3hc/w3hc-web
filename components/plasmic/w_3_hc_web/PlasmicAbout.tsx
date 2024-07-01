@@ -442,7 +442,7 @@ function PlasmicAbout__RenderFunc(props: {
                       platform={"nextjs"}
                       target={"_blank"}
                     >
-                      {"Contribute on Gov"}
+                      {"Contribute to Gov"}
                     </PlasmicLink__>
                   }
                   <React.Fragment>{""}</React.Fragment>

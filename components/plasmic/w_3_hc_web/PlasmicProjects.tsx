@@ -438,7 +438,7 @@ function PlasmicProjects__RenderFunc(props: {
                           sty.link__ythbV
                         )}
                         component={Link}
-                        href={"https://github.com/w3hc/gov"}
+                        href={`/gov`}
                         platform={"nextjs"}
                         target={"_blank"}
                       >
