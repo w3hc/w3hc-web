@@ -37,7 +37,7 @@ type TranslationKeys = {
     messageSignedTitle: string
     messageSignedDescription: (signature: string) => string
   }
-  navigation: { settings: string; dao: string }
+  navigation: { settings: string; dao: string; clic: string }
   settings: {
     title: string
     loginRequired: string
@@ -460,6 +460,7 @@ export const translations: Translations = {
     navigation: {
       settings: 'Settings',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: 'Settings',
@@ -935,6 +936,7 @@ export const translations: Translations = {
     navigation: {
       settings: '设置',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: '设置',
@@ -1389,6 +1391,7 @@ export const translations: Translations = {
     navigation: {
       settings: 'सेटिंग्स',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: 'सेटिंग्स',
@@ -1877,6 +1880,7 @@ export const translations: Translations = {
     navigation: {
       settings: 'Configuración',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: 'Configuración',
@@ -2384,6 +2388,7 @@ export const translations: Translations = {
     navigation: {
       settings: 'Paramètres',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: 'Paramètres',
@@ -2894,6 +2899,7 @@ export const translations: Translations = {
     navigation: {
       settings: 'الإعدادات',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: 'الإعدادات',
@@ -3366,6 +3372,7 @@ export const translations: Translations = {
     navigation: {
       settings: 'সেটিংস',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: 'সেটিংস',
@@ -3866,6 +3873,7 @@ export const translations: Translations = {
     navigation: {
       settings: 'Настройки',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: 'Настройки',
@@ -4367,6 +4375,7 @@ export const translations: Translations = {
     navigation: {
       settings: 'Configurações',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: 'Configurações',
@@ -4870,6 +4879,7 @@ export const translations: Translations = {
     navigation: {
       settings: 'ترتیبات',
       dao: 'DAO',
+      clic: 'Clic',
     },
     settings: {
       title: 'ترتیبات',
